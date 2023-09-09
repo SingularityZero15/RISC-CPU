@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="rom_256x16b_synth_1" LaunchDir="C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.runs/rom_256x16b_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

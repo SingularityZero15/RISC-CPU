@@ -119,6 +119,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0000;
+                    carry_out <= carry_in;
                 end
             end
             `FUNC_NE: begin
@@ -127,6 +128,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0001;
+                    carry_out <= carry_in;
                 end
             end
             `FUNC_LT: begin
@@ -135,6 +137,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0000;
+                    carry_out <= carry_in;
                 end
             end
             `FUNC_GE: begin
@@ -143,6 +146,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0001;
+                    carry_out <= carry_in;
                 end
             end
             `FUNC_LTU: begin
@@ -151,6 +155,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0000;
+                    carry_out <= carry_in;
                 end
             end
             `FUNC_GEU: begin
@@ -159,6 +164,7 @@ module ALU_16bit(
                     carry_out <= carry_in;
                 end else begin
                     result <= 16'h0001;
+                    carry_out <= carry_in;
                 end
             end
             default: begin

@@ -23,7 +23,7 @@
 
 module ALU_16bit(
     //input clk,
-    input [2:0] func,
+    input [3:0] func,
     input [15:0] op1,
     input [15:0] op2,
     input extended,
@@ -43,7 +43,7 @@ module ALU_16bit(
     reg carry;
     */
 
-    reg [16:0] midresult;
+    //reg [16:0] midresult;
 
     always @(*) begin
         /*
@@ -112,6 +112,54 @@ module ALU_16bit(
             `FUNC_SRA: begin
                 result <= ($signed(op1)) >>> op2[3:0];
                 carry_out <= carry_in;
+            end
+            `FUNC_EQ: begin
+                if (op1 == op2) begin
+                    result <= 16'h0001;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0000;
+                end
+            end
+            `FUNC_NE: begin
+                if (op1 == op2) begin
+                    result <= 16'h0000;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0001;
+                end
+            end
+            `FUNC_LT: begin
+                if (($signed(op1)) < ($signed(op2))) begin
+                    result <= 16'h0001;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0000;
+                end
+            end
+            `FUNC_GE: begin
+                if (($signed(op1)) < ($signed(op2))) begin
+                    result <= 16'h0000;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0001;
+                end
+            end
+            `FUNC_LTU: begin
+                if (op1 < op2) begin
+                    result <= 16'h0001;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0000;
+                end
+            end
+            `FUNC_GEU: begin
+                if (op1 < op2) begin
+                    result <= 16'h0000;
+                    carry_out <= carry_in;
+                end else begin
+                    result <= 16'h0001;
+                end
             end
             default: begin
                 result <= op1;

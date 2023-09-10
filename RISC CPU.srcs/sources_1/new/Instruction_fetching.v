@@ -22,18 +22,11 @@
 `define PERIOD 10
 
 module Instruction_fetching(
-    input clk,
     input Fetch_EN,
-    input Inc_EN,
     input [15:0] Data_bus,
-    //input [15:0] PC_Reg,
     output reg [15:0] Instruction,
-    // output reg Read_EN,
-    output Read_EN,
-    output [15:0] Address_Bus
+    output reg Addr_EN
     );
-
-    reg Addr_EN;
 
     initial begin
         Instruction <= 16'hzzzz;
@@ -47,11 +40,4 @@ module Instruction_fetching(
         Addr_EN <= 1'b0;
     end
 
-    Program_Counter Program_Counter_Inst(
-        // .clk(clk),
-        .Inc_EN(Inc_EN),
-        .Read_EN(Read_EN),
-        .Address_Bus(Address_Bus),
-        .Addr_EN(Addr_EN)
-    );
 endmodule

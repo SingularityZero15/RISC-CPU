@@ -21,9 +21,30 @@
 
 
 module Double_edge_counter_2bit(
-
+    input clk,
+    input Reset,
+    output reg [1:0] Count
     );
 
-    
+    reg [1:0] clk_counter1, clk_counter2;
 
+    always @(*) begin
+        if(clk)
+            Count = clk_counter1;
+        else
+            Count = clk_counter2;
+    end
+
+    always @(posedge clk) begin
+        clk_counter1 <= clk_counter2 + 1'b1;
+    end
+
+    always @(negedge clk) begin
+        clk_counter2 <= clk_counter1 + 1'b1;
+    end
+
+    always @(posedge Reset) begin
+        clk_counter1 <= 2'b00;
+        clk_counter2 <= 2'b00;
+    end
 endmodule

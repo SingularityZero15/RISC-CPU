@@ -34,13 +34,16 @@ module Risc_cpu(
     wire [15:0] In_Instruction;
     wire [1:0] In_Rd, In_Rs1, In_Rs2;
     wire [3:0] In_ALU_Opcode;
-    wire In_Rs2_EN;
+    wire In_Rs1_EN, In_Rs2_EN;
     wire In_ALU_Extended;
     wire [8:0] In_Immediate_num;
     wire [15:0] In_Data_Rd, In_Data_Rs1, In_Data_Rs2;
     wire In_Flag_in;
     wire In_Flag_out;
     wire In_Flag_EN;
+    wire In_Rd_EN;
+    wire In_GR_Store_EN;
+    wire In_Instruction_decoder_Reset;
 
     Internal_rom Internal_rom_Inst(
         .clk(Ex_clk),
@@ -73,9 +76,12 @@ module Risc_cpu(
         .Rs1(In_Rs1),
         .Rs2(In_Rs2),
         .ALU_Opcode(In_ALU_Opcode),
+        .Rd_EN(In_Rd_EN),
+        .Rs1_EN(In_Rs1_EN),
         .Rs2_EN(In_Rs2_EN),
         .ALU_Extended(In_ALU_Extended),
-        .Immediate_num(In_Immediate_num)
+        .Immediate_num(In_Immediate_num),
+        .Reset(In_Instruction_decoder_Reset)
     );
 
     Runtime_register Runtime_register_Inst(
@@ -86,7 +92,11 @@ module Risc_cpu(
         .Data_out_b(In_Data_Rs2),
         .Data_in(In_Data_Rd),
         .Flag_in(In_Flag_in),
-        .Flag_out(In_Flag_out)
+        .Flag_out(In_Flag_out),
+        .A_EN(In_Rs1_EN),
+        .B_EN(In_Rs2_EN),
+        .I_EN(In_GR_Store_EN),
+        .Flag_EN(In_GR_Store_EN)
     );
 
     ALU_16bit ALU_16bit_Inst(
@@ -97,6 +107,13 @@ module Risc_cpu(
         .carry_in(In_Flag_out),
         .result(In_Data_Rd),
         .carry_out(In_Flag_in)
+    );
+
+    Control_unit Control_unit_Inst(
+        .clk(Ex_clk),
+        .Rd_EN(In_Rd_EN),
+        .GR_Store_EN(In_GR_Store_EN),
+        .Instruction_decoder_Reset(In_Instruction_decoder_Reset)
     );
 
 endmodule

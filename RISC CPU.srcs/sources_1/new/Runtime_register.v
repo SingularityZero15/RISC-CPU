@@ -41,10 +41,11 @@ module Runtime_register(
     assign Flag_out = Flag_register;
 
     initial begin
-        General_register[0] <= 16'hzzzz;
-        General_register[1] <= 16'hzzzz;
-        General_register[2] <= 16'hzzzz;
-        General_register[3] <= 16'hzzzz;
+        General_register[0] <= 16'h0000;
+        General_register[1] <= 16'h0000;
+        General_register[2] <= 16'h0000;
+        General_register[3] <= 16'h0000;
+        Flag_register <= 1'b0;
         Data_out_a <= 16'hzzzz;
         Data_out_b <= 16'hzzzz;
     end

@@ -48,9 +48,89 @@ module Risc_cpu_tb(
         Tb_Fetch_EN <= 1'b0;
         # `PERIOD;
         # `PERIOD;
+        # `PERIOD;
         Tb_Fetch_EN <= 1'b1;
         # `PERIOD
         Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Fetch_EN <= 1'b1;
+        # `PERIOD
+        Tb_Fetch_EN <= 1'b0;
+        # `PERIOD;
         # `PERIOD;
         # `PERIOD;
         Tb_Fetch_EN <= 1'b1;
@@ -63,6 +143,85 @@ module Risc_cpu_tb(
         Tb_Inc_EN <= 1'b1;
         # `PERIOD
         Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
+        # `PERIOD;
+        # `PERIOD;
+        Tb_Inc_EN <= 1'b1;
+        # `PERIOD
+        Tb_Inc_EN <= 1'b0;
+        # `PERIOD;
         # `PERIOD;
         # `PERIOD;
         Tb_Inc_EN <= 1'b1;

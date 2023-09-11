@@ -56,9 +56,11 @@ module Program_Counter(
             Register <= Address_Bus_In;
             Reset1 <= 1'b0;
         end
+
         if (Timer_Count2 == 3'b010 && Reset2) begin
             Read_EN <= 1;
         end
+        
         if (Timer_Count2 == 3'b100 && Reset2) begin
             Read_EN <= 0;
             Address_Bus_Out <= 16'hzzzz;

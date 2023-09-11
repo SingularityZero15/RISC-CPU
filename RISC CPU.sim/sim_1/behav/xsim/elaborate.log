@@ -23,6 +23,7 @@ Compiling module xil_defaultlib.Program_Counter
 Compiling module xil_defaultlib.Instruction_decoder
 Compiling module xil_defaultlib.Runtime_register
 Compiling module xil_defaultlib.ALU_16bit
+Compiling module xil_defaultlib.Control_unit
 Compiling module xil_defaultlib.Risc_cpu
 Compiling module xil_defaultlib.Risc_cpu_tb
 Compiling module xil_defaultlib.glbl

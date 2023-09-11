@@ -50,6 +50,7 @@ module Risc_cpu(
     );
 
     Instruction_fetching Instruction_fetching_Inst(
+        .clk(Ex_clk),
         .Fetch_EN(Ex_Fetch_EN),
         .Data_bus(In_Data_bus),
         .Instruction(In_Instruction),
@@ -57,6 +58,7 @@ module Risc_cpu(
     );
     
     Program_Counter Program_Counter_Inst(
+        .clk(Ex_clk),
         .Inc_EN(Ex_Inc_EN),
         .Read_EN(In_Read_EN),
         .Set_EN(Ex_Set_EN),

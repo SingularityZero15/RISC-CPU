@@ -29,32 +29,31 @@ module Instruction_fetching(
     output reg Addr_EN
     );
 
-    reg counter_en;
-    reg [1:0] clk_counter;
+    reg Reset;
+    wire [1:0] Timer_count;
 
     initial begin
         Instruction <= 16'hzzzz;
         Addr_EN = 1'b0;
-        counter_en <= 1'b0;
-        clk_counter <= 2'b00;
     end
 
-    always @(posedge clk) begin
-        if (counter_en) begin
-            clk_counter <= clk_counter + 1;
-        end
-
-        if (Fetch_EN && clk_counter == 2'b11) begin
-            counter_en <= 1'b1;
-            clk_counter <= 2'b00;
+    always @(clk) begin
+        if (Timer_count == 2'b10 && Reset) begin
             Instruction <= Data_bus;
-            Addr_EN<= 1'b0;
+            Addr_EN <= 1'b0;
+            Reset <= 1'b0;
         end
     end
 
     always @(posedge Fetch_EN ) begin
         Addr_EN <= 1'b1;
-        counter_en <= 1'b1;
+        Reset <= 1'b1;
     end
+
+    Double_edge_counter_2bit Instruction_fetching_timer(
+        .clk(clk),
+        .Reset(Reset),
+        .Count(Timer_count)
+    );
 
 endmodule

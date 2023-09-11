@@ -39,6 +39,12 @@ module Counter_tb(
     initial begin
         Reset <= 1'b0;
         #(`PERIOD/2);
+        #(`PERIOD/2);
+        Reset <= 1'b1;
+        #(`PERIOD/2);
+        Reset <= 1'b0;
+        #(`PERIOD/2);
+        #(`PERIOD/2);
         Reset <= 1'b1;
     end
 

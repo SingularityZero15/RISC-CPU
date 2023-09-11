@@ -22,7 +22,6 @@
 `define PERIOD 10
 
 module Program_Counter(
-    // input clk,
     input Addr_EN,
     input Inc_EN,
     input Set_EN,
@@ -40,14 +39,14 @@ module Program_Counter(
     end
     
     always @(posedge Inc_EN ) begin
-        Register <= Register + 1;
+        Register <= Address_Bus_Out + 1;
     end
 
-    always @(posedge Set_EN ) begin
-        Address_Bus_Out <= 16'hzzzz;
-        # (`PERIOD / 2)
-        Register <= Address_Bus_In;
-    end
+    // always @(posedge Set_EN ) begin
+    //     Address_Bus_Out <= 16'hzzzz;
+    //     # (`PERIOD / 2)
+    //     Register <= Address_Bus_In;
+    // end
 
     always @(posedge Addr_EN) begin
         Address_Bus_Out <= Register;

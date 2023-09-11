@@ -24,6 +24,9 @@ module Runtime_register(
     input A_EN,
     input B_EN,
     input I_EN,
+    input Flag_EN,
+    input Flag_in,
+    output Flag_out,
     input [1:0] Address_out_a,
     output reg [15:0] Data_out_a,
     input [1:0] Address_out_b,
@@ -33,6 +36,9 @@ module Runtime_register(
     );
 
     reg [15:0] General_register [3:0];
+    reg Flag_register; // 0: carry flag
+
+    assign Flag_out = Flag_register;
 
     initial begin
         General_register[0] <= 16'hzzzz;
@@ -53,5 +59,9 @@ module Runtime_register(
 
     always @(posedge I_EN) begin
         General_register[Address_in] <= Data_in;
+    end
+    
+    always @(posedge Flag_EN) begin
+        Flag_register <= Flag_in;
     end
 endmodule

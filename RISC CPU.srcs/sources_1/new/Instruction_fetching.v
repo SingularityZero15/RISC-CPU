@@ -38,7 +38,7 @@ module Instruction_fetching(
     end
 
     always @(clk) begin
-        if (Timer_count == 2'b10 && Reset) begin
+        if (Timer_count == 2'b11 && Reset) begin
             Instruction <= Data_bus;
             Addr_EN <= 1'b0;
             Reset <= 1'b0;

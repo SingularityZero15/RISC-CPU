@@ -1,65 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7vh580thcg1155-2" LaunchTime="1694397300">
   <File Type="PWROPT-DCP" Name="Program_Counter_pwropt.dcp"/>
-  <File Type="ROUTE-PWR" Name="Program_Counter_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Program_Counter.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="Program_Counter_power_summary_routed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Program_Counter_postplace_pwropt.dcp"/>
   <File Type="REPORTS-TCL" Name="Program_Counter_reports.tcl"/>
   <File Type="BG-DRC" Name="Program_Counter.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Program_Counter_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Program_Counter_timing_summary_init.rpt"/>
-  <File Type="OPT-HWDEF" Name="Program_Counter.hwdef"/>
   <File Type="OPT-DCP" Name="Program_Counter_opt.dcp"/>
-  <File Type="OPT-DRC" Name="Program_Counter_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="Program_Counter_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="Program_Counter_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Program_Counter_timing_summary_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Program_Counter.hwdef"/>
   <File Type="PLACE-DCP" Name="Program_Counter_placed.dcp"/>
-  <File Type="PLACE-IO" Name="Program_Counter_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Program_Counter_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Program_Counter_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Program_Counter_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Program_Counter_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Program_Counter_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Program_Counter_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Program_Counter_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Program_Counter_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Program_Counter_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Program_Counter_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Program_Counter_drc_physopted.rpt"/>
   <File Type="BG-BIT" Name="Program_Counter.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="Program_Counter_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="Program_Counter_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="Program_Counter_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="Program_Counter_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="Program_Counter_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Program_Counter_drc_routed.pb"/>
   <File Type="BITSTR-MSK" Name="Program_Counter.msk"/>
-  <File Type="ROUTE-DRC-RPX" Name="Program_Counter_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="Program_Counter.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Program_Counter_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-RBT" Name="Program_Counter.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Program_Counter_methodology_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="Program_Counter.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Program_Counter_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Program_Counter_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="Program_Counter_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Program_Counter_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Program_Counter_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="Program_Counter_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Program_Counter_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Program_Counter_incremental_reuse_routed.rpt"/>
   <File Type="RDI-RDI" Name="Program_Counter.vdi"/>
-  <File Type="ROUTE-CLK" Name="Program_Counter_clock_utilization_routed.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Program_Counter_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Program_Counter_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Program_Counter_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Program_Counter_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Program_Counter_timing_summary_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="Program_Counter.nky"/>
   <File Type="BITSTR-BMM" Name="Program_Counter_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="Program_Counter.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="Program_Counter.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="Program_Counter.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>

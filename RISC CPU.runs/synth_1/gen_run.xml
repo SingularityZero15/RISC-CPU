@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7vh580thcg1155-2" LaunchTime="1694397300">
   <File Type="PA-TCL" Name="Program_Counter.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Program_Counter_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Program_Counter_reports.tcl"/>
   <File Type="RDS-RDS" Name="Program_Counter.vds"/>
-  <File Type="RDS-UTIL" Name="Program_Counter_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Program_Counter_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Program_Counter.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Program_Counter_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Program_Counter_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Program_Counter.v">

@@ -46,18 +46,14 @@ module Risc_cpu_tb(
         Tb_Fetch_EN <= 1'b1;
         # `PERIOD
         Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
+        # `PERIOD;
+        # `PERIOD;
         Tb_Fetch_EN <= 1'b1;
         # `PERIOD
         Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
+        # `PERIOD;
+        # `PERIOD;
         Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
     end
 
     //Test increase pc for 3 times
@@ -67,36 +63,31 @@ module Risc_cpu_tb(
         Tb_Inc_EN <= 1'b1;
         # `PERIOD
         Tb_Inc_EN <= 1'b0;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b1;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b0;
-        # `PERIOD
+        # `PERIOD;
+        # `PERIOD;
         Tb_Inc_EN <= 1'b1;
         # `PERIOD
         Tb_Inc_EN <= 1'b0;
     end
 
-    initial begin
-        Tb_Set_EN <= 1'b0;
-        Tb_Address_Bus <= 16'hzzzz;
-        # (`PERIOD * 9)
-        Tb_Address_Bus <= 16'h0005;
-        Tb_Set_EN <= 1'b1;
-        # (`PERIOD / 2)
-        Tb_Set_EN <= 1'b0;
-        # (`PERIOD / 2)
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-    end
+    // initial begin
+    //     Tb_Set_EN <= 1'b0;
+    //     Tb_Address_Bus <= 16'hzzzz;
+    //     # (`PERIOD * 9)
+    //     Tb_Address_Bus <= 16'h0005;
+    //     Tb_Set_EN <= 1'b1;
+    //     # (`PERIOD / 2)
+    //     Tb_Set_EN <= 1'b0;
+    //     # (`PERIOD / 2)
+    //     Tb_Fetch_EN <= 1'b1;
+    //     # `PERIOD
+    //     Tb_Fetch_EN <= 1'b0;
+    // end
 
     Risc_cpu Risc_cpu_Inst(
         .Ex_clk(clk),
         .Ex_Fetch_EN(Tb_Fetch_EN),
         .Ex_Inc_EN(Tb_Inc_EN),
-        .Ex_Instruction(Tb_Instruction),
-        .Ex_Address_Bus(Tb_Address_Bus),
         .Ex_Set_EN(Tb_Set_EN)
     );
 

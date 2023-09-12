@@ -30,6 +30,7 @@ module Instruction_decoder(
     output reg Rd_EN,
     output reg Rs1_EN,
     output reg Rs2_EN,
+    output reg Immediate_num_EN,
     output reg ALU_Extended,
     output reg [8:0] Immediate_num
     );
@@ -44,12 +45,14 @@ module Instruction_decoder(
             Rs1 <= Instruction[8:7];
             Rs1_EN <= 1'b1;
 
-            ALU_Extended <= Instruction[11]; 
-
-            Rs2_EN <= Instruction[4];
+            Immediate_num_EN <= Instruction[4];
             if(Instruction[4]) begin
                 Rs2 <= Instruction[10:9];
+                Rs2_EN <= 1'b1;
+
                 Immediate_num <= 9'bzzzzzzzzz;
+
+                ALU_Extended <= Instruction[11]; 
             end else begin
                 Rs2 <= 2'bzz;
                 Immediate_num <= {2'b00, Instruction[15:9]};

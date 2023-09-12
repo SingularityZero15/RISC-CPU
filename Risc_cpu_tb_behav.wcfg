@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="160300001fs"></ZoomEndTime>
-      <Cursor1Time time="10000000fs"></Cursor1Time>
+      <ZoomStartTime time="32333333fs"></ZoomStartTime>
+      <ZoomEndTime time="173533334fs"></ZoomEndTime>
+      <Cursor1Time time="150000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="33" />
+   <WVObjectSize size="35" />
    <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -151,5 +151,13 @@
    <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Timer_count" type="array">
       <obj_property name="ElementShortName">Timer_count[1:0]</obj_property>
       <obj_property name="ObjectShortName">Timer_count[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Immediate_num" type="array">
+      <obj_property name="ElementShortName">Immediate_num[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Immediate_num[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rs2_EN" type="logic">
+      <obj_property name="ElementShortName">Rs2_EN</obj_property>
+      <obj_property name="ObjectShortName">Rs2_EN</obj_property>
    </wvobject>
 </wave_config>

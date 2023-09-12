@@ -41,7 +41,7 @@ module Risc_cpu(
     wire In_Flag_in;
     wire In_Flag_out;
     wire In_Flag_EN;
-    wire In_Rd_EN;
+    wire In_Rd_EN, In_Immediate_num_EN;
     wire In_GR_Store_EN;
     wire In_Instruction_decoder_Reset;
 
@@ -81,7 +81,8 @@ module Risc_cpu(
         .Rs2_EN(In_Rs2_EN),
         .ALU_Extended(In_ALU_Extended),
         .Immediate_num(In_Immediate_num),
-        .Reset(In_Instruction_decoder_Reset)
+        .Reset(In_Instruction_decoder_Reset),
+        .Immediate_num_EN(In_Immediate_num_EN)
     );
 
     Runtime_register Runtime_register_Inst(
@@ -102,7 +103,7 @@ module Risc_cpu(
     ALU_16bit ALU_16bit_Inst(
         .func(In_ALU_Opcode),
         .op1(In_Data_Rs1),
-        .op2(In_Rs2_EN ? In_Data_Rs2 : {7'b0000000, In_Immediate_num}),
+        .op2(In_Immediate_num_EN ? In_Data_Rs2 : {7'b0000000, In_Immediate_num}),
         .extended(In_ALU_Extended),
         .carry_in(In_Flag_out),
         .result(In_Data_Rd),

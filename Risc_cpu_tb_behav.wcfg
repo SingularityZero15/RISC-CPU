@@ -11,130 +11,154 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="32333333fs"></ZoomStartTime>
-      <ZoomEndTime time="173533334fs"></ZoomEndTime>
-      <Cursor1Time time="150000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="807500001fs"></ZoomEndTime>
+      <Cursor1Time time="45100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/clk" type="logic">
+   <WVObjectSize size="82" />
+   <wvobject fp_name="/Risc_cpu_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Rd_EN" type="logic">
-      <obj_property name="ElementShortName">Rd_EN</obj_property>
-      <obj_property name="ObjectShortName">Rd_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/GR_Store_EN" type="logic">
-      <obj_property name="ElementShortName">GR_Store_EN</obj_property>
-      <obj_property name="ObjectShortName">GR_Store_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Tb_Fetch_EN" type="logic">
+      <obj_property name="ElementShortName">Tb_Fetch_EN</obj_property>
+      <obj_property name="ObjectShortName">Tb_Fetch_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Reset" type="logic">
-      <obj_property name="ElementShortName">Reset</obj_property>
-      <obj_property name="ObjectShortName">Reset</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Tb_Inc_EN" type="logic">
+      <obj_property name="ElementShortName">Tb_Inc_EN</obj_property>
+      <obj_property name="ObjectShortName">Tb_Inc_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Timer_Count" type="logic">
-      <obj_property name="ElementShortName">Timer_Count</obj_property>
-      <obj_property name="ObjectShortName">Timer_Count</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Tb_Set_EN" type="logic">
+      <obj_property name="ElementShortName">Tb_Set_EN</obj_property>
+      <obj_property name="ObjectShortName">Tb_Set_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/A_EN" type="logic">
-      <obj_property name="ElementShortName">A_EN</obj_property>
-      <obj_property name="ObjectShortName">A_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Ex_clk" type="logic">
+      <obj_property name="ElementShortName">Ex_clk</obj_property>
+      <obj_property name="ObjectShortName">Ex_clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/B_EN" type="logic">
-      <obj_property name="ElementShortName">B_EN</obj_property>
-      <obj_property name="ObjectShortName">B_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Ex_rst" type="logic">
+      <obj_property name="ElementShortName">Ex_rst</obj_property>
+      <obj_property name="ObjectShortName">Ex_rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/I_EN" type="logic">
-      <obj_property name="ElementShortName">I_EN</obj_property>
-      <obj_property name="ObjectShortName">I_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Ex_Fetch_EN" type="logic">
+      <obj_property name="ElementShortName">Ex_Fetch_EN</obj_property>
+      <obj_property name="ObjectShortName">Ex_Fetch_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Flag_EN" type="logic">
-      <obj_property name="ElementShortName">Flag_EN</obj_property>
-      <obj_property name="ObjectShortName">Flag_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Ex_Inc_EN" type="logic">
+      <obj_property name="ElementShortName">Ex_Inc_EN</obj_property>
+      <obj_property name="ObjectShortName">Ex_Inc_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Flag_in" type="logic">
-      <obj_property name="ElementShortName">Flag_in</obj_property>
-      <obj_property name="ObjectShortName">Flag_in</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Ex_Set_EN" type="logic">
+      <obj_property name="ElementShortName">Ex_Set_EN</obj_property>
+      <obj_property name="ObjectShortName">Ex_Set_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Flag_out" type="logic">
-      <obj_property name="ElementShortName">Flag_out</obj_property>
-      <obj_property name="ObjectShortName">Flag_out</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Data_bus" type="array">
+      <obj_property name="ElementShortName">In_Data_bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Data_bus[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Address_out_a" type="array">
-      <obj_property name="ElementShortName">Address_out_a[1:0]</obj_property>
-      <obj_property name="ObjectShortName">Address_out_a[1:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Read_EN" type="logic">
+      <obj_property name="ElementShortName">In_Read_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Read_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Data_out_a" type="array">
-      <obj_property name="ElementShortName">Data_out_a[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_out_a[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Address_Bus" type="array">
+      <obj_property name="ElementShortName">In_Address_Bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Address_Bus[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Address_out_b" type="array">
-      <obj_property name="ElementShortName">Address_out_b[1:0]</obj_property>
-      <obj_property name="ObjectShortName">Address_out_b[1:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Addr_EN" type="logic">
+      <obj_property name="ElementShortName">In_Addr_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Addr_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Data_out_b" type="array">
-      <obj_property name="ElementShortName">Data_out_b[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_out_b[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Instruction" type="array">
+      <obj_property name="ElementShortName">In_Instruction[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Instruction[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Address_in" type="array">
-      <obj_property name="ElementShortName">Address_in[1:0]</obj_property>
-      <obj_property name="ObjectShortName">Address_in[1:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rd" type="array">
+      <obj_property name="ElementShortName">In_Rd[1:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Rd[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Data_in" type="array">
-      <obj_property name="ElementShortName">Data_in[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_in[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rs1" type="array">
+      <obj_property name="ElementShortName">In_Rs1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Rs1[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/General_register" type="array">
-      <obj_property name="ElementShortName">General_register[3:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">General_register[3:0][15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rs2" type="array">
+      <obj_property name="ElementShortName">In_Rs2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Rs2[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Flag_register" type="logic">
-      <obj_property name="ElementShortName">Flag_register</obj_property>
-      <obj_property name="ObjectShortName">Flag_register</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_ALU_Opcode" type="array">
+      <obj_property name="ElementShortName">In_ALU_Opcode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">In_ALU_Opcode[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/func" type="array">
-      <obj_property name="ElementShortName">func[3:0]</obj_property>
-      <obj_property name="ObjectShortName">func[3:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rs1_EN" type="logic">
+      <obj_property name="ElementShortName">In_Rs1_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Rs1_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/op1" type="array">
-      <obj_property name="ElementShortName">op1[15:0]</obj_property>
-      <obj_property name="ObjectShortName">op1[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rs2_EN" type="logic">
+      <obj_property name="ElementShortName">In_Rs2_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Rs2_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/op2" type="array">
-      <obj_property name="ElementShortName">op2[15:0]</obj_property>
-      <obj_property name="ObjectShortName">op2[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_ALU_Extended" type="logic">
+      <obj_property name="ElementShortName">In_ALU_Extended</obj_property>
+      <obj_property name="ObjectShortName">In_ALU_Extended</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/extended" type="logic">
-      <obj_property name="ElementShortName">extended</obj_property>
-      <obj_property name="ObjectShortName">extended</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Immediate_num" type="array">
+      <obj_property name="ElementShortName">In_Immediate_num[8:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Immediate_num[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/carry_in" type="logic">
-      <obj_property name="ElementShortName">carry_in</obj_property>
-      <obj_property name="ObjectShortName">carry_in</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Data_Rd" type="array">
+      <obj_property name="ElementShortName">In_Data_Rd[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Data_Rd[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/result" type="array">
-      <obj_property name="ElementShortName">result[15:0]</obj_property>
-      <obj_property name="ObjectShortName">result[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Data_Rs1" type="array">
+      <obj_property name="ElementShortName">In_Data_Rs1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Data_Rs1[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/carry_out" type="logic">
-      <obj_property name="ElementShortName">carry_out</obj_property>
-      <obj_property name="ObjectShortName">carry_out</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Data_Rs2" type="array">
+      <obj_property name="ElementShortName">In_Data_Rs2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Data_Rs2[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Flag_in" type="logic">
+      <obj_property name="ElementShortName">In_Flag_in</obj_property>
+      <obj_property name="ObjectShortName">In_Flag_in</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Fetch_EN" type="logic">
-      <obj_property name="ElementShortName">Fetch_EN</obj_property>
-      <obj_property name="ObjectShortName">Fetch_EN</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Flag_out" type="logic">
+      <obj_property name="ElementShortName">In_Flag_out</obj_property>
+      <obj_property name="ObjectShortName">In_Flag_out</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Data_bus" type="array">
-      <obj_property name="ElementShortName">Data_bus[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_bus[15:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Flag_EN" type="logic">
+      <obj_property name="ElementShortName">In_Flag_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Flag_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Rd_EN" type="logic">
+      <obj_property name="ElementShortName">In_Rd_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Rd_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Immediate_num_EN" type="logic">
+      <obj_property name="ElementShortName">In_Immediate_num_EN</obj_property>
+      <obj_property name="ObjectShortName">In_Immediate_num_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_GR_Store_EN" type="logic">
+      <obj_property name="ElementShortName">In_GR_Store_EN</obj_property>
+      <obj_property name="ObjectShortName">In_GR_Store_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/In_Instruction_decoder_Reset" type="logic">
+      <obj_property name="ElementShortName">In_Instruction_decoder_Reset</obj_property>
+      <obj_property name="ObjectShortName">In_Instruction_decoder_Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Internal_rom_Inst/Data_out" type="array">
+      <obj_property name="ElementShortName">Data_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Internal_rom_Inst/Data_reg" type="array">
+      <obj_property name="ElementShortName">Data_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_reg[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Instruction" type="array">
       <obj_property name="ElementShortName">Instruction[15:0]</obj_property>
@@ -152,12 +176,176 @@
       <obj_property name="ElementShortName">Timer_count[1:0]</obj_property>
       <obj_property name="ObjectShortName">Timer_count[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Immediate_num" type="array">
-      <obj_property name="ElementShortName">Immediate_num[8:0]</obj_property>
-      <obj_property name="ObjectShortName">Immediate_num[8:0]</obj_property>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Instruction_fetching_timer/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Instruction_fetching_timer/Count" type="array">
+      <obj_property name="ElementShortName">Count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Count[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Instruction_fetching_timer/clk_counter1" type="array">
+      <obj_property name="ElementShortName">clk_counter1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_counter1[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_fetching_Inst/Instruction_fetching_timer/clk_counter2" type="array">
+      <obj_property name="ElementShortName">clk_counter2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_counter2[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Address_Bus_Out" type="array">
+      <obj_property name="ElementShortName">Address_Bus_Out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Address_Bus_Out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Read_EN" type="logic">
+      <obj_property name="ElementShortName">Read_EN</obj_property>
+      <obj_property name="ObjectShortName">Read_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Reset1" type="logic">
+      <obj_property name="ElementShortName">Reset1</obj_property>
+      <obj_property name="ObjectShortName">Reset1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Reset2" type="logic">
+      <obj_property name="ElementShortName">Reset2</obj_property>
+      <obj_property name="ObjectShortName">Reset2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Timer_Count1" type="logic">
+      <obj_property name="ElementShortName">Timer_Count1</obj_property>
+      <obj_property name="ObjectShortName">Timer_Count1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Timer_Count2" type="array">
+      <obj_property name="ElementShortName">Timer_Count2[2:0]</obj_property>
+      <obj_property name="ObjectShortName">Timer_Count2[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer1/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer1/Count" type="logic">
+      <obj_property name="ElementShortName">Count</obj_property>
+      <obj_property name="ObjectShortName">Count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer1/clk_counter1" type="logic">
+      <obj_property name="ElementShortName">clk_counter1</obj_property>
+      <obj_property name="ObjectShortName">clk_counter1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer1/clk_counter2" type="logic">
+      <obj_property name="ElementShortName">clk_counter2</obj_property>
+      <obj_property name="ObjectShortName">clk_counter2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer2/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer2/Count" type="array">
+      <obj_property name="ElementShortName">Count[2:0]</obj_property>
+      <obj_property name="ObjectShortName">Count[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer2/clk_counter1" type="array">
+      <obj_property name="ElementShortName">clk_counter1[2:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_counter1[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Program_Counter_Inst/Program_Counter_Timer2/clk_counter2" type="array">
+      <obj_property name="ElementShortName">clk_counter2[2:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_counter2[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rd" type="array">
+      <obj_property name="ElementShortName">Rd[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Rd[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rs1" type="array">
+      <obj_property name="ElementShortName">Rs1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Rs1[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rs2" type="array">
+      <obj_property name="ElementShortName">Rs2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Rs2[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/ALU_Opcode" type="array">
+      <obj_property name="ElementShortName">ALU_Opcode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_Opcode[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rd_EN" type="logic">
+      <obj_property name="ElementShortName">Rd_EN</obj_property>
+      <obj_property name="ObjectShortName">Rd_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rs1_EN" type="logic">
+      <obj_property name="ElementShortName">Rs1_EN</obj_property>
+      <obj_property name="ObjectShortName">Rs1_EN</obj_property>
    </wvobject>
    <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Rs2_EN" type="logic">
       <obj_property name="ElementShortName">Rs2_EN</obj_property>
       <obj_property name="ObjectShortName">Rs2_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/Immediate_num_EN" type="logic">
+      <obj_property name="ElementShortName">Immediate_num_EN</obj_property>
+      <obj_property name="ObjectShortName">Immediate_num_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Instruction_decoder_Inst/ALU_Extended" type="logic">
+      <obj_property name="ElementShortName">ALU_Extended</obj_property>
+      <obj_property name="ObjectShortName">ALU_Extended</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Data_out_a" type="array">
+      <obj_property name="ElementShortName">Data_out_a[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out_a[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Data_out_b" type="array">
+      <obj_property name="ElementShortName">Data_out_b[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_out_b[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/General_register" type="array">
+      <obj_property name="ElementShortName">General_register[3:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">General_register[3:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Runtime_register_Inst/Flag_register" type="logic">
+      <obj_property name="ElementShortName">Flag_register</obj_property>
+      <obj_property name="ObjectShortName">Flag_register</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/op2" type="array">
+      <obj_property name="ElementShortName">op2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">op2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/result" type="array">
+      <obj_property name="ElementShortName">result[15:0]</obj_property>
+      <obj_property name="ObjectShortName">result[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/ALU_16bit_Inst/carry_out" type="logic">
+      <obj_property name="ElementShortName">carry_out</obj_property>
+      <obj_property name="ObjectShortName">carry_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/GR_Store_EN" type="logic">
+      <obj_property name="ElementShortName">GR_Store_EN</obj_property>
+      <obj_property name="ObjectShortName">GR_Store_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Instruction_decoder_Reset" type="logic">
+      <obj_property name="ElementShortName">Instruction_decoder_Reset</obj_property>
+      <obj_property name="ObjectShortName">Instruction_decoder_Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Timer_Count" type="logic">
+      <obj_property name="ElementShortName">Timer_Count</obj_property>
+      <obj_property name="ObjectShortName">Timer_Count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Control_unit_Timer/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Control_unit_Timer/Count" type="logic">
+      <obj_property name="ElementShortName">Count</obj_property>
+      <obj_property name="ObjectShortName">Count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Control_unit_Timer/clk_counter1" type="logic">
+      <obj_property name="ElementShortName">clk_counter1</obj_property>
+      <obj_property name="ObjectShortName">clk_counter1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Risc_cpu_tb/Risc_cpu_Inst/Control_unit_Inst/Control_unit_Timer/clk_counter2" type="logic">
+      <obj_property name="ElementShortName">clk_counter2</obj_property>
+      <obj_property name="ObjectShortName">clk_counter2</obj_property>
    </wvobject>
 </wave_config>

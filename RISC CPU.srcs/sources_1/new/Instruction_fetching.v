@@ -19,10 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define PERIOD 10
-
 module Instruction_fetching(
     input clk,
+    input rst,
     input Fetch_EN,
     input [15:0] Data_bus,
     output reg [15:0] Instruction,
@@ -32,9 +31,10 @@ module Instruction_fetching(
     reg Reset;
     wire [1:0] Timer_count;
 
-    initial begin
-        Instruction <= 16'hzzzz;
+    always @(negedge rst) begin
+        Instruction <= 16'h0000;
         Addr_EN = 1'b0;
+        Reset <= 1'b0;
     end
 
     always @(clk) begin

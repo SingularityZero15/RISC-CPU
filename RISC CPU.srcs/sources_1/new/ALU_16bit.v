@@ -22,6 +22,7 @@
 `include "ALU_16bit_func.vh"
 
 module ALU_16bit(
+    input rst,
     input [3:0] func,
     input [15:0] op1,
     input [15:0] op2,
@@ -30,6 +31,11 @@ module ALU_16bit(
     output reg [15:0] result,
     output reg carry_out
     );
+
+    always @(negedge rst) begin
+        result <= 16'h0000;
+        carry_out <= 1'b0;
+    end
 
     always @(*) begin
         case (func)

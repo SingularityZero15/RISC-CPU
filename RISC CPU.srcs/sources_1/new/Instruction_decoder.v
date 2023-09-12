@@ -21,6 +21,7 @@
 
 
 module Instruction_decoder(
+    input rst,
     input [15:0] Instruction,
     input Reset,
     output reg [1:0] Rd,
@@ -34,6 +35,19 @@ module Instruction_decoder(
     output reg ALU_Extended,
     output reg [8:0] Immediate_num
     );
+
+    always @(negedge rst) begin
+        Rd <= 2'b00;
+        Rs1 <= 2'b00;
+        Rs2 <= 2'b00;
+        ALU_Opcode<= 4'b0000;
+        Rd_EN <= 1'b0;
+        Rs1_EN <= 1'b0;
+        Rs2_EN <= 1'b0;
+        Immediate_num_EN <= 1'b0;
+        ALU_Extended <= 1'b0;
+        Immediate_num <= 9'b000000000;
+    end
 
     always @(*) begin
         if (~Instruction[0]) begin
@@ -50,11 +64,11 @@ module Instruction_decoder(
                 Rs2 <= Instruction[10:9];
                 Rs2_EN <= 1'b1;
 
-                Immediate_num <= 9'bzzzzzzzzz;
+                Immediate_num <= 9'b000000000;
 
                 ALU_Extended <= Instruction[11]; 
             end else begin
-                Rs2 <= 2'bzz;
+                Rs2 <= 2'b00;
                 Immediate_num <= {2'b00, Instruction[15:9]};
             end
         end

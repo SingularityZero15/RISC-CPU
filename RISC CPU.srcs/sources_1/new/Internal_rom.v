@@ -22,6 +22,7 @@
 
 module Internal_rom(
     input clk,
+    input rst,
     input Enable,
     input [15:0] Address_Bus,
     output [15:0] Data_bus
@@ -31,12 +32,11 @@ module Internal_rom(
     reg [15:0] Data_reg;
     assign Data_bus = Enable ? Data_reg : 16'bZ;
 
-
-    initial begin
+    always @(negedge rst) begin
         Data_reg <= 16'hzzzz;
     end
 
-    always @(negedge clk ) begin
+    always @(negedge clk) begin
         if (~Address_Bus[15]) begin
             Data_reg <= Data_out;
         end        

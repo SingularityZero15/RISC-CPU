@@ -23,6 +23,7 @@
 
 module Program_Counter(
     input clk,
+    input rst,
     input Addr_EN,
     input Inc_EN,
     input Set_EN,
@@ -35,11 +36,13 @@ module Program_Counter(
     reg Reset1, Reset2;
     wire Timer_Count1;
     wire [2:0] Timer_Count2;
-    
-    initial begin
+
+    always @(negedge rst) begin
         Address_Bus_Out <= 16'hzzzz;
         Register <= 16'h0000;
-        Read_EN <= 0;
+        Read_EN <= 1'b0;
+        Reset1 <= 1'b0;
+        Reset2 <= 1'b0;
     end
     
     always @(posedge Inc_EN ) begin

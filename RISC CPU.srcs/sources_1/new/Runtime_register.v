@@ -21,6 +21,7 @@
 
 
 module Runtime_register(
+    input rst,
     input A_EN,
     input B_EN,
     input I_EN,
@@ -40,14 +41,14 @@ module Runtime_register(
 
     assign Flag_out = Flag_register;
 
-    initial begin
+    always @(negedge rst) begin
         General_register[0] <= 16'h0000;
         General_register[1] <= 16'h0000;
         General_register[2] <= 16'h0000;
         General_register[3] <= 16'h0000;
         Flag_register <= 1'b0;
-        Data_out_a <= 16'hzzzz;
-        Data_out_b <= 16'hzzzz;
+        Data_out_a <= 16'h0000;
+        Data_out_b <= 16'h0000;
     end
 
     always @(posedge A_EN) begin

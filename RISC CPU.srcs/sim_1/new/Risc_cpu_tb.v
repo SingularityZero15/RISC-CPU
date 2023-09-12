@@ -26,17 +26,26 @@ module Risc_cpu_tb(
     );
 
     reg clk;
+    reg rst;
     reg Tb_Fetch_EN;
     reg Tb_Inc_EN;
     reg Tb_Set_EN;
-    reg [15:0] Tb_Address_Bus;
-    wire [15:0] Tb_Instruction;
 
     always begin
         clk <= 1'b0;
         #(`PERIOD/2)
         clk <= 1'b1;
         #(`PERIOD/2);
+    end
+
+    initial begin
+        Tb_Set_EN <= 1'b0;
+    end
+
+    initial begin
+        rst <= 1'b1;
+        #(`PERIOD/2);
+        rst <= 1'b0;
     end
 
     //Test fetch instruction for 4 times
@@ -245,6 +254,7 @@ module Risc_cpu_tb(
 
     Risc_cpu Risc_cpu_Inst(
         .Ex_clk(clk),
+        .Ex_rst(rst),
         .Ex_Fetch_EN(Tb_Fetch_EN),
         .Ex_Inc_EN(Tb_Inc_EN),
         .Ex_Set_EN(Tb_Set_EN)

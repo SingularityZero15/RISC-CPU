@@ -22,6 +22,7 @@
 
 module Risc_cpu(
     input Ex_clk,
+    input Ex_rst,
     input Ex_Fetch_EN,
     input Ex_Inc_EN,
     input Ex_Set_EN
@@ -47,6 +48,7 @@ module Risc_cpu(
 
     Internal_rom Internal_rom_Inst(
         .clk(Ex_clk),
+        .rst(Ex_rst),
         .Enable(In_Read_EN),
         .Address_Bus(In_Address_Bus),
         .Data_bus(In_Data_bus)
@@ -54,6 +56,7 @@ module Risc_cpu(
 
     Instruction_fetching Instruction_fetching_Inst(
         .clk(Ex_clk),
+        .rst(Ex_rst),
         .Fetch_EN(Ex_Fetch_EN),
         .Data_bus(In_Data_bus),
         .Instruction(In_Instruction),
@@ -62,6 +65,7 @@ module Risc_cpu(
     
     Program_Counter Program_Counter_Inst(
         .clk(Ex_clk),
+        .rst(Ex_rst),
         .Inc_EN(Ex_Inc_EN),
         .Read_EN(In_Read_EN),
         .Set_EN(Ex_Set_EN),
@@ -71,6 +75,7 @@ module Risc_cpu(
     );
 
     Instruction_decoder Instruction_decoder_Inst(
+        .rst(Ex_rst),
         .Instruction(In_Instruction),
         .Rd(In_Rd),
         .Rs1(In_Rs1),
@@ -86,6 +91,7 @@ module Risc_cpu(
     );
 
     Runtime_register Runtime_register_Inst(
+        .rst(Ex_rst),
         .Address_out_a(In_Rs1),
         .Address_out_b(In_Rs2),
         .Address_in(In_Rd),
@@ -101,6 +107,7 @@ module Risc_cpu(
     );
 
     ALU_16bit ALU_16bit_Inst(
+        .rst(Ex_rst),
         .func(In_ALU_Opcode),
         .op1(In_Data_Rs1),
         .op2(In_Immediate_num_EN ? In_Data_Rs2 : {7'b0000000, In_Immediate_num}),
@@ -112,6 +119,7 @@ module Risc_cpu(
 
     Control_unit Control_unit_Inst(
         .clk(Ex_clk),
+        .rst(Ex_rst),
         .Rd_EN(In_Rd_EN),
         .GR_Store_EN(In_GR_Store_EN),
         .Instruction_decoder_Reset(In_Instruction_decoder_Reset)

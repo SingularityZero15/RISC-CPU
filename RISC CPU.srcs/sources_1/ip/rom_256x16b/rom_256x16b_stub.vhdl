@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Mon Sep 11 18:50:53 2023
+-- Date        : Tue Sep 12 13:58:43 2023
 -- Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top rom_256x16b -prefix
---               rom_256x16b_ rom_256x16b_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub {C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC
+--               CPU.srcs/sources_1/ip/rom_256x16b/rom_256x16b_stub.vhdl}
 -- Design      : rom_256x16b
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Sep 12 13:57:21 2023
+# Process ID: 21548
+# Current directory: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.runs/rom_256x16b_synth_1
+# Command line: vivado.exe -log rom_256x16b.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rom_256x16b.tcl
+# Log file: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.runs/rom_256x16b_synth_1/rom_256x16b.vds
+# Journal file: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.runs/rom_256x16b_synth_1\vivado.jou
+#-----------------------------------------------------------
+source rom_256x16b.tcl -notrace

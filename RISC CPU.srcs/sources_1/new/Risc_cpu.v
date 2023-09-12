@@ -22,12 +22,12 @@
 
 module Risc_cpu(
     input Ex_clk,
-    input Ex_rst,
-    input Ex_Fetch_EN,
-    input Ex_Inc_EN,
-    input Ex_Set_EN
+    input Ex_rst
     );
 
+    wire In_Fetch_EN;
+    wire In_Inc_EN;
+    wire In_Set_EN;
     wire [15:0] In_Data_bus;
     wire In_Read_EN;
     wire [15:0] In_Address_Bus;
@@ -57,7 +57,7 @@ module Risc_cpu(
     Instruction_fetching Instruction_fetching_Inst(
         .clk(Ex_clk),
         .rst(Ex_rst),
-        .Fetch_EN(Ex_Fetch_EN),
+        .Fetch_EN(In_Fetch_EN),
         .Data_bus(In_Data_bus),
         .Instruction(In_Instruction),
         .Addr_EN(In_Addr_EN)
@@ -66,9 +66,9 @@ module Risc_cpu(
     Program_Counter Program_Counter_Inst(
         .clk(Ex_clk),
         .rst(Ex_rst),
-        .Inc_EN(Ex_Inc_EN),
+        .Inc_EN(In_Inc_EN),
         .Read_EN(In_Read_EN),
-        .Set_EN(Ex_Set_EN),
+        .Set_EN(In_Set_EN),
         .Address_Bus_In(In_Address_Bus),
         .Address_Bus_Out(In_Address_Bus),
         .Addr_EN(In_Addr_EN)
@@ -120,6 +120,8 @@ module Risc_cpu(
     Control_unit Control_unit_Inst(
         .clk(Ex_clk),
         .rst(Ex_rst),
+        .Fetch_EN(In_Fetch_EN),
+        .Inc_EN(In_Inc_EN),
         .Rd_EN(In_Rd_EN),
         .GR_Store_EN(In_GR_Store_EN),
         .Instruction_decoder_Reset(In_Instruction_decoder_Reset)

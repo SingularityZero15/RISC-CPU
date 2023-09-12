@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7vh580thcg1155-2" LaunchTime="1694397300">
-  <File Type="PWROPT-DCP" Name="Program_Counter_pwropt.dcp"/>
   <File Type="PA-TCL" Name="Program_Counter.tcl"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Program_Counter_postplace_pwropt.dcp"/>
+  <File Type="PWROPT-DCP" Name="Program_Counter_pwropt.dcp"/>
   <File Type="REPORTS-TCL" Name="Program_Counter_reports.tcl"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Program_Counter_postplace_pwropt.dcp"/>
   <File Type="BG-DRC" Name="Program_Counter.drc"/>
-  <File Type="OPT-DCP" Name="Program_Counter_opt.dcp"/>
   <File Type="OPT-HWDEF" Name="Program_Counter.hwdef"/>
+  <File Type="OPT-DCP" Name="Program_Counter_opt.dcp"/>
   <File Type="PLACE-DCP" Name="Program_Counter_placed.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Program_Counter_incremental_reuse_pre_placed.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Program_Counter_physopt.dcp"/>

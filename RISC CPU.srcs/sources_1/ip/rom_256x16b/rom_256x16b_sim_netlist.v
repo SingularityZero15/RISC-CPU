@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Mon Sep 11 18:50:53 2023
+// Date        : Tue Sep 12 13:58:43 2023
 // Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top rom_256x16b -prefix
-//               rom_256x16b_ rom_256x16b_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim {C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC
+//               CPU.srcs/sources_1/ip/rom_256x16b/rom_256x16b_sim_netlist.v}
 // Design      : rom_256x16b
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -186,6 +186,7 @@ module rom_256x16b
         .web(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module rom_256x16b_blk_mem_gen_generic_cstr
    (douta,
     clka,
@@ -204,6 +205,7 @@ module rom_256x16b_blk_mem_gen_generic_cstr
         .douta(douta));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module rom_256x16b_blk_mem_gen_prim_width
    (douta,
     clka,
@@ -222,6 +224,7 @@ module rom_256x16b_blk_mem_gen_prim_width
         .douta(douta));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module rom_256x16b_blk_mem_gen_prim_wrapper_init
    (douta,
     clka,
@@ -266,9 +269,9 @@ module rom_256x16b_blk_mem_gen_prim_wrapper_init
     .INITP_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_00(256'h0000000000000000000000000000000000000000000000000000000000000001),
-    .INIT_01(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_02(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_00(256'h00080A00000804060008000A010400000008000A010400000008000A01040000),
+    .INIT_01(256'h00000D0E00070F0C0005050C000A07000000050000070F0C0005050C00020706),
+    .INIT_02(256'h00000000000000000000000000000000000000000000000000000000000A070E),
     .INIT_03(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_04(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -380,6 +383,7 @@ module rom_256x16b_blk_mem_gen_prim_wrapper_init
         .WEBWE({1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module rom_256x16b_blk_mem_gen_top
    (douta,
     clka,
@@ -422,7 +426,7 @@ endmodule
 (* C_USE_URAM = "0" *) (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) 
 (* C_WRITE_DEPTH_A = "256" *) (* C_WRITE_DEPTH_B = "256" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
 (* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "16" *) (* C_WRITE_WIDTH_B = "16" *) 
-(* C_XDEVICEFAMILY = "zynq" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* C_XDEVICEFAMILY = "zynq" *) (* ORIG_REF_NAME = "blk_mem_gen_v8_4_1" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module rom_256x16b_blk_mem_gen_v8_4_1
    (clka,
     rsta,
@@ -636,6 +640,7 @@ module rom_256x16b_blk_mem_gen_v8_4_1
         .douta(douta));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_1_synth" *) 
 module rom_256x16b_blk_mem_gen_v8_4_1_synth
    (douta,
     clka,

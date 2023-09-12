@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Mon Sep 11 18:50:53 2023
+-- Date        : Tue Sep 12 13:58:43 2023
 -- Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top rom_256x16b -prefix
---               rom_256x16b_ rom_256x16b_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim {C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC
+--               CPU.srcs/sources_1/ip/rom_256x16b/rom_256x16b_sim_netlist.vhdl}
 -- Design      : rom_256x16b
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity rom_256x16b_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end rom_256x16b_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of rom_256x16b_blk_mem_gen_prim_wrapper_init is
@@ -58,9 +60,9 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000001",
-      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_00 => X"00080A00000804060008000A010400000008000A010400000008000A01040000",
+      INIT_01 => X"00000D0E00070F0C0005050C000A07000000050000070F0C0005050C00020706",
+      INIT_02 => X"00000000000000000000000000000000000000000000000000000000000A070E",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -207,6 +209,8 @@ entity rom_256x16b_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end rom_256x16b_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of rom_256x16b_blk_mem_gen_prim_width is
@@ -228,6 +232,8 @@ entity rom_256x16b_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end rom_256x16b_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of rom_256x16b_blk_mem_gen_generic_cstr is
@@ -249,6 +255,8 @@ entity rom_256x16b_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end rom_256x16b_blk_mem_gen_top;
 
 architecture STRUCTURE of rom_256x16b_blk_mem_gen_top is
@@ -270,6 +278,8 @@ entity rom_256x16b_blk_mem_gen_v8_4_1_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
 end rom_256x16b_blk_mem_gen_v8_4_1_synth;
 
 architecture STRUCTURE of rom_256x16b_blk_mem_gen_v8_4_1_synth is
@@ -497,6 +507,8 @@ entity rom_256x16b_blk_mem_gen_v8_4_1 is
   attribute C_WRITE_WIDTH_B of rom_256x16b_blk_mem_gen_v8_4_1 : entity is 16;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of rom_256x16b_blk_mem_gen_v8_4_1 : entity is "zynq";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of rom_256x16b_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of rom_256x16b_blk_mem_gen_v8_4_1 : entity is "yes";
 end rom_256x16b_blk_mem_gen_v8_4_1;

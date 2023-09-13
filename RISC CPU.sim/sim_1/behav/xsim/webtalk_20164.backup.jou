@@ -2,10 +2,10 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Sep 11 11:14:23 2023
-# Process ID: 24280
+# Start of session at: Tue Sep 12 20:27:12 2023
+# Process ID: 20164
 # Current directory: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.sim/sim_1/behav/xsim/xsim.dir/Counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.sim/sim_1/behav/xsim/xsim.dir/MUX_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------

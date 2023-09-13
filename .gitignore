@@ -1,0 +1,13 @@
+Assembler/.vs/
+Assembler/x64/
+Assembler/Assembler/x64/
+RISC CPU/.vscode/
+RISC CPU/.Xil/
+RISC CPU/RISC CPU.cache/
+RISC CPU/RISC CPU.hw/
+RISC CPU/RISC CPU.ip_user_files/
+RISC CPU/RISC CPU.runs/
+RISC CPU/RISC CPU.sim/
+RISC CPU/*.jou
+RISC CPU/*.log
+RISC CPU/*.str

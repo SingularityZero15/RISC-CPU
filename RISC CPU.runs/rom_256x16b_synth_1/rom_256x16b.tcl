@@ -18,7 +18,7 @@ proc create_report { reportName command } {
 }
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
-create_project -in_memory -part xc7vh580thcg1155-2
+create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -26,6 +26,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir {C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.cache/wt} [current_project]
 set_property parent.project_path {C:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.xpr} [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {c:/Users/gjk19/Desktop/Digital Circuit/Vivado Project/RISC CPU/RISC CPU.cache/ip} [current_project]
@@ -48,7 +49,7 @@ set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir {C:/Users/g
 
 if { $cached_ip eq {} } {
 
-synth_design -top rom_256x16b -part xc7vh580thcg1155-2 -mode out_of_context
+synth_design -top rom_256x16b -part xc7z020clg484-1 -mode out_of_context
 
 #---------------------------------------------------------
 # Generate Checkpoint/Stub/Simulation Files For IP Cache

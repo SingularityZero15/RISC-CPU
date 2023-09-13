@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ALU_16bit_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ALU_16bit_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="134000001fs"></ZoomEndTime>
+      <Cursor1Time time="100000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/ALU_16bit_tb/infunc" type="array">
+      <obj_property name="ElementShortName">infunc[2:0]</obj_property>
+      <obj_property name="ObjectShortName">infunc[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/inop1" type="array">
+      <obj_property name="ElementShortName">inop1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inop1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/inop2" type="array">
+      <obj_property name="ElementShortName">inop2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inop2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/incf" type="logic">
+      <obj_property name="ElementShortName">incf</obj_property>
+      <obj_property name="ObjectShortName">incf</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/inextended" type="logic">
+      <obj_property name="ElementShortName">inextended</obj_property>
+      <obj_property name="ObjectShortName">inextended</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/outresult" type="array">
+      <obj_property name="ElementShortName">outresult[15:0]</obj_property>
+      <obj_property name="ObjectShortName">outresult[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALU_16bit_tb/outcf" type="logic">
+      <obj_property name="ElementShortName">outcf</obj_property>
+      <obj_property name="ObjectShortName">outcf</obj_property>
+   </wvobject>
+</wave_config>

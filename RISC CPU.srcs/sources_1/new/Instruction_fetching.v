@@ -19,39 +19,41 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define PERIOD 10
-
 module Instruction_fetching(
     input clk,
+    input rst,
     input Fetch_EN,
-    input Inc_EN,
     input [15:0] Data_bus,
-    //input [15:0] PC_Reg,
     output reg [15:0] Instruction,
-    // output reg Read_EN,
-    output Read_EN,
-    output [15:0] Address_Bus
+    output reg Addr_EN
     );
 
-    reg Addr_EN;
+    reg Reset;
+    wire [1:0] Timer_count;
 
-    initial begin
-        Instruction <= 16'hzzzz;
+    always @(negedge rst) begin
+        Instruction <= 16'h0000;
         Addr_EN = 1'b0;
+        Reset <= 1'b0;
+    end
+
+    always @(clk) begin
+        if (Timer_count == 2'b11 && Reset) begin
+            Instruction <= Data_bus;
+            Addr_EN <= 1'b0;
+            Reset <= 1'b0;
+        end
     end
 
     always @(posedge Fetch_EN ) begin
         Addr_EN <= 1'b1;
-        # (`PERIOD * 1.5)
-        Instruction <= Data_bus;
-        Addr_EN <= 1'b0;
+        Reset <= 1'b1;
     end
 
-    Program_Counter Program_Counter_Inst(
-        // .clk(clk),
-        .Inc_EN(Inc_EN),
-        .Read_EN(Read_EN),
-        .Address_Bus(Address_Bus),
-        .Addr_EN(Addr_EN)
+    Double_edge_counter_2bit Instruction_fetching_timer(
+        .clk(clk),
+        .Reset(Reset),
+        .Count(Timer_count)
     );
+
 endmodule

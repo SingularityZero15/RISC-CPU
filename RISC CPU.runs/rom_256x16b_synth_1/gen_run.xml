@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="rom_256x16b_synth_1" LaunchPart="xc7vh580thcg1155-2" LaunchTime="1694142193">
+<GenRun Id="rom_256x16b_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1694498240">
   <File Type="PA-TCL" Name="rom_256x16b.tcl"/>
   <File Type="REPORTS-TCL" Name="rom_256x16b_reports.tcl"/>
   <File Type="RDS-RDS" Name="rom_256x16b.vds"/>

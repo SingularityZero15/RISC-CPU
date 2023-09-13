@@ -26,9 +26,7 @@ module Risc_cpu_tb(
     );
 
     reg clk;
-    reg Tb_Fetch_EN;
-    reg Tb_Inc_EN;
-    wire [15:0] Tb_Instruction;
+    reg rst;
 
     always begin
         clk <= 1'b0;
@@ -37,49 +35,15 @@ module Risc_cpu_tb(
         #(`PERIOD/2);
     end
 
-    //Test fetch instruction for 4 times
     initial begin
-        Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b1;
-        # `PERIOD
-        Tb_Fetch_EN <= 1'b0;
-    end
-
-    //Test increase pc for 3 times
-    initial begin
-        Tb_Inc_EN <= 1'b0;
-        # (`PERIOD * 2.5)
-        Tb_Inc_EN <= 1'b1;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b0;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b1;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b0;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b1;
-        # `PERIOD
-        Tb_Inc_EN <= 1'b0;
+        rst <= 1'b1;
+        #(`PERIOD/2);
+        rst <= 1'b0;
     end
 
     Risc_cpu Risc_cpu_Inst(
         .Ex_clk(clk),
-        .Ex_Fetch_EN(Tb_Fetch_EN),
-        .Ex_Inc_EN(Tb_Inc_EN),
-        .Ex_Instruction(Tb_Instruction)
+        .Ex_rst(rst)
     );
 
 endmodule

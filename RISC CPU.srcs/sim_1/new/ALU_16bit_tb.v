@@ -25,7 +25,7 @@ module ALU_16bit_tb(
 
     );
 
-    reg [2:0] infunc;
+    reg [3:0] infunc;
     reg [15:0] inop1, inop2;
     reg incf;
     reg inextended;
@@ -80,7 +80,26 @@ module ALU_16bit_tb(
 
         //Test 8a29 >>> 4(FFF4)
         #5 infunc = `FUNC_SRA;
+
+        //Test 8a29 == 2c6b
+        #5 
+        inop2 = 16'h2C6B;
+        infunc = `FUNC_EQ;
         
+        //Test 8a29 != 2c6b
+        #5 infunc = `FUNC_NE;
+        
+        //Test 8a29 < 2c6b
+        #5 infunc = `FUNC_LT;
+
+        //Test 8a29 < 2c6b (Unsigned)
+        #5 infunc = `FUNC_LTU;
+        
+        //Test 8a29 >= 2c6b
+        #5 infunc = `FUNC_GE;
+
+        //Test 8a29 >= 2c6b (Unsigned)
+        #5 infunc = `FUNC_GEU;
     end
 
     ALU_16bit ALU_16bit_test(

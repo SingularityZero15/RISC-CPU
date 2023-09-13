@@ -101,3 +101,8 @@ dismissDialog("Settings"); // v (cj)
 // [GUI Memory]: 86 MB (+1740kb) [00:05:14]
 // [GUI Memory]: 91 MB (+130kb) [00:05:32]
 // [GUI Memory]: 96 MB (+592kb) [00:06:17]
+// [GUI Memory]: 101 MB (+327kb) [00:07:02]
+// [GUI Memory]: 106 MB (+115kb) [00:08:02]
+// [GUI Memory]: 139 MB (+29532kb) [00:08:14]
+// [Engine Memory]: 712 MB (+32690kb) [00:08:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 744 MB. GUI used memory: 56 MB. Current time: 9/13/23 11:26:51 AM CST

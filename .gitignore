@@ -10,3 +10,4 @@ RISC CPU/RISC CPU.runs/
 RISC CPU/RISC CPU.sim/
 RISC CPU/*.jou
 RISC CPU/*.log
+RISC CPU/*.str

@@ -11,5 +11,5 @@ RISC CPU/RISC CPU.sim/
 RISC CPU/*.jou
 RISC CPU/*.log
 RISC CPU/*.str
-*.pdf
 *.docx
+*.pdf

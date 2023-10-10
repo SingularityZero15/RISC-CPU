@@ -29,11 +29,20 @@ module ALU_16bit_tb(
     reg [15:0] inop1, inop2;
     reg incf;
     reg inextended;
+    reg rst;
     wire [15:0] outresult;
     wire outcf;
 
     initial begin
 
+        rst = 1'b0;
+
+        #5
+
+        rst = 1'b1;
+
+        #5
+        rst = 1'b0;
         //Test 8a29+c65b
         inop1 = 16'h8a29;
         inop2 = 16'hc65b;
@@ -103,6 +112,7 @@ module ALU_16bit_tb(
     end
 
     ALU_16bit ALU_16bit_test(
+        .rst(rst),
         .func(infunc),
         .op1(inop1),
         .op2(inop2),

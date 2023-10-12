@@ -11,5 +11,15 @@ RISC CPU/RISC CPU.sim/
 RISC CPU/*.jou
 RISC CPU/*.log
 RISC CPU/*.str
+RISC-V CPU/.vscode/
+RISC-V CPU/.Xil/
+RISC-V CPU/RISC-V CPU.cache/
+RISC-V CPU/RISC-V CPU.hw/
+RISC-V CPU/RISC-V CPU.ip_user_files/
+RISC-V CPU/RISC-V CPU.runs/
+RISC-V CPU/RISC-V CPU.sim/
+RISC-V CPU/*.jou
+RISC-V CPU/*.log
+RISC-V CPU/*.str
 *.docx
 *.pdf

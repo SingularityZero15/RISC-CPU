@@ -46,19 +46,19 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:ip:dist_mem_gen:8.0
--- IP Revision: 12
+-- IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
+-- IP Revision: 1
 
 -- The following code must appear in the VHDL architecture header.
 
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT RAM_8x256_blk1
   PORT (
-    a : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    d : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    we : IN STD_LOGIC;
-    spo : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    clka : IN STD_LOGIC;
+    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -69,11 +69,11 @@ END COMPONENT;
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
 your_instance_name : RAM_8x256_blk1
   PORT MAP (
-    a => a,
-    d => d,
-    clk => clk,
-    we => we,
-    spo => spo
+    clka => clka,
+    wea => wea,
+    addra => addra,
+    dina => dina,
+    douta => douta
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

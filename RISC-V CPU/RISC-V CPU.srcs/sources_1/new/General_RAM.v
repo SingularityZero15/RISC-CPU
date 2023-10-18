@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module General_RAM(
-    input clk,
-    input [31:0] Address,
-    input Data_Enable,
+    input CLK,
+    input Read_Enable,
     input Write_Enable,
-    input [1:0] Operate_Mode,
+    input [1:0] Data_Width,
+    input [31:0] Address,
     input [31:0] In_Data,
     output [31:0] Out_Data
     );
@@ -34,9 +34,12 @@ module General_RAM(
     reg [7:0] In_Data_0, In_Data_1, In_Data_2, In_Data_3;
     wire [7:0] Out_Data_0, Out_Data_1, Out_Data_2, Out_Data_3;
     reg [31:0] Arranged_Data;
-    assign Out_Data = Data_Enable ? 32'bz : Arranged_Data;
-    
+
+    assign Out_Data = (Read_Enable && Address[31:16] == 16'h0001) ? Arranged_Data : 32'bz;
+
     always @(*) begin
+
+        //Set address for each memory chip
         case (Address[1:0])
             2'b00: begin
                 Address_0 <= Address[9:2];
@@ -63,77 +66,87 @@ module General_RAM(
                 Address_3 <= Address[9:2];
             end
         endcase
-        case (Operate_Mode)
-            2'b00: begin
-                case (Address[1:0])
-                    2'b00: begin
-                        Write_Enable_0 <= Write_Enable;
-                        Write_Enable_1 <= 0;
-                        Write_Enable_2 <= 0;
-                        Write_Enable_3 <= 0;
-                    end
-                    2'b01: begin
-                        Write_Enable_1 <= Write_Enable;
-                        Write_Enable_2 <= 0;
-                        Write_Enable_3 <= 0;
-                        Write_Enable_0 <= 0;
-                    end
-                    2'b10: begin
-                        Write_Enable_2 <= Write_Enable;
-                        Write_Enable_3 <= 0;
-                        Write_Enable_0 <= 0;
-                        Write_Enable_1 <= 0;
-                    end
-                    2'b11: begin
-                        Write_Enable_3 <= Write_Enable;
-                        Write_Enable_0 <= 0;
-                        Write_Enable_1 <= 0;
-                        Write_Enable_2 <= 0;
-                    end
-                endcase
-            end
-            2'b01: begin
-                case (Address[1:0])
-                    2'b00: begin
-                        Write_Enable_0 <= Write_Enable;
-                        Write_Enable_1 <= Write_Enable;
-                        Write_Enable_2 <= 0;
-                        Write_Enable_3 <= 0;
-                    end
-                    2'b01: begin
-                        Write_Enable_1 <= Write_Enable;
-                        Write_Enable_2 <= Write_Enable;
-                        Write_Enable_3 <= 0;
-                        Write_Enable_0 <= 0;
-                    end
-                    2'b10: begin
-                        Write_Enable_2 <= Write_Enable;
-                        Write_Enable_3 <= Write_Enable;
-                        Write_Enable_0 <= 0;
-                        Write_Enable_1 <= 0;
-                    end
-                    2'b11: begin
-                        Write_Enable_3 <= Write_Enable;
-                        Write_Enable_0 <= Write_Enable;
-                        Write_Enable_1 <= 0;
-                        Write_Enable_2 <= 0;
-                    end
-                endcase
-            end
-            2'b10: begin
-                Write_Enable_0 <= Write_Enable;
-                Write_Enable_1 <= Write_Enable;
-                Write_Enable_2 <= Write_Enable;
-                Write_Enable_3 <= Write_Enable;
-            end
-            2'b11: begin
-                Write_Enable_0 <= Write_Enable;
-                Write_Enable_1 <= Write_Enable;
-                Write_Enable_2 <= Write_Enable;
-                Write_Enable_3 <= Write_Enable;
-            end
-        endcase
-        case (Operate_Mode)
+        
+        //Set write signal for each memory chip
+        if (Address[31:16] == 16'h0001) begin
+            case (Data_Width)
+                2'b00: begin
+                    case (Address[1:0])
+                        2'b00: begin
+                            Write_Enable_0 <= Write_Enable;
+                            Write_Enable_1 <= 0;
+                            Write_Enable_2 <= 0;
+                            Write_Enable_3 <= 0;
+                        end
+                        2'b01: begin
+                            Write_Enable_1 <= Write_Enable;
+                            Write_Enable_2 <= 0;
+                            Write_Enable_3 <= 0;
+                            Write_Enable_0 <= 0;
+                        end
+                        2'b10: begin
+                            Write_Enable_2 <= Write_Enable;
+                            Write_Enable_3 <= 0;
+                            Write_Enable_0 <= 0;
+                            Write_Enable_1 <= 0;
+                        end
+                        2'b11: begin
+                            Write_Enable_3 <= Write_Enable;
+                            Write_Enable_0 <= 0;
+                            Write_Enable_1 <= 0;
+                            Write_Enable_2 <= 0;
+                        end
+                    endcase
+                end
+                2'b01: begin
+                    case (Address[1:0])
+                        2'b00: begin
+                            Write_Enable_0 <= Write_Enable;
+                            Write_Enable_1 <= Write_Enable;
+                            Write_Enable_2 <= 0;
+                            Write_Enable_3 <= 0;
+                        end
+                        2'b01: begin
+                            Write_Enable_1 <= Write_Enable;
+                            Write_Enable_2 <= Write_Enable;
+                            Write_Enable_3 <= 0;
+                            Write_Enable_0 <= 0;
+                        end
+                        2'b10: begin
+                            Write_Enable_2 <= Write_Enable;
+                            Write_Enable_3 <= Write_Enable;
+                            Write_Enable_0 <= 0;
+                            Write_Enable_1 <= 0;
+                        end
+                        2'b11: begin
+                            Write_Enable_3 <= Write_Enable;
+                            Write_Enable_0 <= Write_Enable;
+                            Write_Enable_1 <= 0;
+                            Write_Enable_2 <= 0;
+                        end
+                    endcase
+                end
+                2'b10: begin
+                    Write_Enable_0 <= Write_Enable;
+                    Write_Enable_1 <= Write_Enable;
+                    Write_Enable_2 <= Write_Enable;
+                    Write_Enable_3 <= Write_Enable;
+                end
+                2'b11: begin
+                    Write_Enable_0 <= Write_Enable;
+                    Write_Enable_1 <= Write_Enable;
+                    Write_Enable_2 <= Write_Enable;
+                    Write_Enable_3 <= Write_Enable;
+                end
+            endcase
+        end else begin
+            Write_Enable_0 <= 0;
+            Write_Enable_1 <= 0;
+            Write_Enable_2 <= 0;
+            Write_Enable_3 <= 0;
+        end
+
+        case (Data_Width)
             2'b00: begin
                 case (Address[1:0])
                     2'b00: begin
@@ -235,7 +248,7 @@ module General_RAM(
                 endcase
             end
         endcase
-        case (Operate_Mode)
+        case (Data_Width)
             2'b00: begin
                 case (Address[1:0])
                     2'b00: begin
@@ -352,28 +365,28 @@ module General_RAM(
     end
 
     RAM_8x256_blk0 RAM_blk0 (
-        .clka(clk),    // input wire clka
+        .clka(CLK),    // input wire clka
         .wea(Write_Enable_0),      // input wire [0 : 0] wea
         .addra(Address_0),  // input wire [7 : 0] addra
         .dina(In_Data_0),    // input wire [7 : 0] dina
         .douta(Out_Data_0)  // output wire [7 : 0] douta
     );
     RAM_8x256_blk1 RAM_blk1 (
-        .clka(clk),    // input wire clka
+        .clka(CLK),    // input wire clka
         .wea(Write_Enable_1),      // input wire [0 : 0] wea
         .addra(Address_1),  // input wire [7 : 0] addra
         .dina(In_Data_1),    // input wire [7 : 0] dina
         .douta(Out_Data_1)  // output wire [7 : 0] douta
     );
     RAM_8x256_blk2 RAM_blk2 (
-        .clka(clk),    // input wire clka
+        .clka(CLK),    // input wire clka
         .wea(Write_Enable_2),      // input wire [0 : 0] wea
         .addra(Address_2),  // input wire [7 : 0] addra
         .dina(In_Data_2),    // input wire [7 : 0] dina
         .douta(Out_Data_2)  // output wire [7 : 0] douta
     );
     RAM_8x256_blk3 RAM_blk3 (
-        .clka(clk),    // input wire clka
+        .clka(CLK),    // input wire clka
         .wea(Write_Enable_3),      // input wire [0 : 0] wea
         .addra(Address_3),  // input wire [7 : 0] addra
         .dina(In_Data_3),    // input wire [7 : 0] dina

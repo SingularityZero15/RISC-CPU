@@ -21,17 +21,20 @@
 
 
 module Arithmetic_Logic_Unit(
+    input result_as_address_Enable,
     input result_Enable,
     input [2:0] funct3,
     input funct7,
     input [31:0] operand1,
     input [31:0] operand2,
     output [31:0] result,
+    output [31:0] result_as_address,
     output reg result_logic
     );
 
     reg [31:0] __result;
     assign result = result_Enable ? __result : 32'bz;
+    assign result_as_address = result_as_address_Enable ? __result : 32'bz;
 
     always @(*) begin
         case (funct3)

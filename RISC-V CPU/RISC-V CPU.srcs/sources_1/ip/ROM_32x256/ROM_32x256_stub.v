@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Tue Oct 17 20:17:38 2023
+// Date        : Wed Oct 18 22:21:19 2023
 // Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top ROM_32x256 -prefix
-//               ROM_32x256_ ROM_32x256_stub.v
+// Command     : write_verilog -force -mode synth_stub {C:/Users/gjk19/Desktop/RISC CPU/RISC-V CPU/RISC-V
+//               CPU.srcs/sources_1/ip/ROM_32x256/ROM_32x256_stub.v}
 // Design      : ROM_32x256
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

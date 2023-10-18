@@ -1,9 +1,9 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Fri Oct 13 16:22:23 2023
+// Date        : Tue Oct 17 20:18:16 2023
 // Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/gjk19/Desktop/RISC CPU/RISC-V CPU/RISC-V
+// Command     : write_verilog -force -mode funcsim {C:/Users/gjk19/Desktop/RISC CPU/RISC-V CPU/RISC-V
 //               CPU.srcs/sources_1/ip/RAM_8x256_blk0/RAM_8x256_blk0_sim_netlist.v}
 // Design      : RAM_8x256_blk0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
@@ -94,9 +94,9 @@ module RAM_8x256_blk0
   (* C_INITA_VAL = "0" *) 
   (* C_INITB_VAL = "0" *) 
   (* C_INIT_FILE = "RAM_8x256_blk0.mem" *) 
-  (* C_INIT_FILE_NAME = "RAM_8x256_blk0.mif" *) 
+  (* C_INIT_FILE_NAME = "no_coe_file_loaded" *) 
   (* C_INTERFACE_TYPE = "0" *) 
-  (* C_LOAD_INIT_FILE = "1" *) 
+  (* C_LOAD_INIT_FILE = "0" *) 
   (* C_MEM_TYPE = "0" *) 
   (* C_MUX_PIPELINE_STAGES = "0" *) 
   (* C_PRIM_TYPE = "1" *) 
@@ -238,7 +238,7 @@ module RAM_8x256_blk0_blk_mem_gen_prim_width
   wire [7:0]douta;
   wire [0:0]wea;
 
-  RAM_8x256_blk0_blk_mem_gen_prim_wrapper_init \prim_init.ram 
+  RAM_8x256_blk0_blk_mem_gen_prim_wrapper \prim_noinit.ram 
        (.addra(addra),
         .clka(clka),
         .dina(dina),
@@ -246,8 +246,8 @@ module RAM_8x256_blk0_blk_mem_gen_prim_width
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
-module RAM_8x256_blk0_blk_mem_gen_prim_wrapper_init
+(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
+module RAM_8x256_blk0_blk_mem_gen_prim_wrapper
    (douta,
     clka,
     addra,
@@ -305,7 +305,7 @@ module RAM_8x256_blk0_blk_mem_gen_prim_wrapper_init
     .INITP_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_00(256'h0000000000000000000000000000000000000000000000000000000002000200),
+    .INIT_00(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_01(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_02(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_03(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -381,7 +381,7 @@ module RAM_8x256_blk0_blk_mem_gen_prim_wrapper_init
     .IS_RSTREGARSTREG_INVERTED(1'b0),
     .IS_RSTREGB_INVERTED(1'b0),
     .RAM_MODE("TDP"),
-    .RDADDR_COLLISION_HWCONFIG("PERFORMANCE"),
+    .RDADDR_COLLISION_HWCONFIG("DELAYED_WRITE"),
     .READ_WIDTH_A(18),
     .READ_WIDTH_B(18),
     .RSTREG_PRIORITY_A("REGCE"),
@@ -460,7 +460,7 @@ endmodule
 (* C_HAS_REGCEA = "0" *) (* C_HAS_REGCEB = "0" *) (* C_HAS_RSTA = "0" *) 
 (* C_HAS_RSTB = "0" *) (* C_HAS_SOFTECC_INPUT_REGS_A = "0" *) (* C_HAS_SOFTECC_OUTPUT_REGS_B = "0" *) 
 (* C_INITA_VAL = "0" *) (* C_INITB_VAL = "0" *) (* C_INIT_FILE = "RAM_8x256_blk0.mem" *) 
-(* C_INIT_FILE_NAME = "RAM_8x256_blk0.mif" *) (* C_INTERFACE_TYPE = "0" *) (* C_LOAD_INIT_FILE = "1" *) 
+(* C_INIT_FILE_NAME = "no_coe_file_loaded" *) (* C_INTERFACE_TYPE = "0" *) (* C_LOAD_INIT_FILE = "0" *) 
 (* C_MEM_TYPE = "0" *) (* C_MUX_PIPELINE_STAGES = "0" *) (* C_PRIM_TYPE = "1" *) 
 (* C_READ_DEPTH_A = "256" *) (* C_READ_DEPTH_B = "256" *) (* C_READ_WIDTH_A = "8" *) 
 (* C_READ_WIDTH_B = "8" *) (* C_RSTRAM_A = "0" *) (* C_RSTRAM_B = "0" *) 

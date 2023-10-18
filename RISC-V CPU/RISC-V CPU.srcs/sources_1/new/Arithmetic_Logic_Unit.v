@@ -21,86 +21,90 @@
 
 
 module Arithmetic_Logic_Unit(
+    input result_Enable,
     input [2:0] funct3,
     input funct7,
     input [31:0] operand1,
     input [31:0] operand2,
-    output reg [31:0] result,
-    output reg Zero
+    output [31:0] result,
+    output reg result_logic
     );
+
+    reg [31:0] __result;
+    assign result = result_Enable ? __result : 32'bz;
 
     always @(*) begin
         case (funct3)
             3'b000: begin
                 if (funct7) begin
-                    result = operand1 - operand2;
+                    __result <= operand1 - operand2;
                 end else begin
-                    result = operand1 + operand2;
+                    __result <= operand1 + operand2;
                 end
                 if (operand1 == operand2) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
             3'b001: begin
-                result = operand1 << operand2[4:0];
+                __result <= operand1 << operand2[4:0];
                 if (operand1 != operand2) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
             3'b010: begin
-                Zero = 0;
+                result_logic <= 0;
                 if ($signed(operand1) < $signed(operand2)) begin
-                    result = 32'b1;
+                    __result <= 32'b1;
                 end else begin
-                    result = 32'b0;
+                    __result <= 32'b0;
                 end
             end
             3'b011: begin
-                Zero = 0;
+                result_logic <= 0;
                 if (operand1 < operand2) begin
-                    result = 32'b1;
+                    __result <= 32'b1;
                 end else begin
-                    result = 32'b0;
+                    __result <= 32'b0;
                 end
             end
             3'b100: begin
-                result = operand1 ^ operand2;
+                __result <= operand1 ^ operand2;
                 if ($signed(operand1) < $signed(operand2)) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
             3'b101: begin
                 if (funct7) begin
-                    result = $signed(operand1) >>> operand2[4:0];
+                    __result <= $signed(operand1) >>> operand2[4:0];
                 end else begin
-                    result = operand1 >> operand2[4:0];
+                    __result <= operand1 >> operand2[4:0];
                 end
                 if ($signed(operand1) >= $signed(operand2)) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
             3'b110: begin
-                result = operand1 | operand2;
+                __result <= operand1 | operand2;
                 if (operand1 < operand2) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
             3'b111: begin
-                result = operand1 & operand2;
+                __result <= operand1 & operand2;
                 if (operand1 >= operand2) begin
-                    Zero = 1'b1;
+                    result_logic <= 1'b1;
                 end else begin
-                    Zero = 1'b0;
+                    result_logic <= 1'b0;
                 end
             end
         endcase

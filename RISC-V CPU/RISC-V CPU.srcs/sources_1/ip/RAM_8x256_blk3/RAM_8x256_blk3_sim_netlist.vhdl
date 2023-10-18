@@ -1,9 +1,9 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Fri Oct 13 16:23:20 2023
+-- Date        : Tue Oct 17 20:19:10 2023
 -- Host        : DESKTOP-JB05U9D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/gjk19/Desktop/RISC CPU/RISC-V CPU/RISC-V
+-- Command     : write_vhdl -force -mode funcsim {C:/Users/gjk19/Desktop/RISC CPU/RISC-V CPU/RISC-V
 --               CPU.srcs/sources_1/ip/RAM_8x256_blk3/RAM_8x256_blk3_sim_netlist.vhdl}
 -- Design      : RAM_8x256_blk3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init is
+entity RAM_8x256_blk3_blk_mem_gen_prim_wrapper is
   port (
     douta : out STD_LOGIC_VECTOR ( 7 downto 0 );
     clka : in STD_LOGIC;
@@ -23,10 +23,10 @@ entity RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
-end RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init;
+  attribute ORIG_REF_NAME of RAM_8x256_blk3_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
+end RAM_8x256_blk3_blk_mem_gen_prim_wrapper;
 
-architecture STRUCTURE of RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init is
+architecture STRUCTURE of RAM_8x256_blk3_blk_mem_gen_prim_wrapper is
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_0\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_1\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_10\ : STD_LOGIC;
@@ -70,7 +70,7 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000030003",
+      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -146,7 +146,7 @@ begin
       IS_RSTREGARSTREG_INVERTED => '0',
       IS_RSTREGB_INVERTED => '0',
       RAM_MODE => "TDP",
-      RDADDR_COLLISION_HWCONFIG => "PERFORMANCE",
+      RDADDR_COLLISION_HWCONFIG => "DELAYED_WRITE",
       READ_WIDTH_A => 18,
       READ_WIDTH_B => 18,
       RSTREG_PRIORITY_A => "REGCE",
@@ -244,7 +244,7 @@ end RAM_8x256_blk3_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of RAM_8x256_blk3_blk_mem_gen_prim_width is
 begin
-\prim_init.ram\: entity work.RAM_8x256_blk3_blk_mem_gen_prim_wrapper_init
+\prim_noinit.ram\: entity work.RAM_8x256_blk3_blk_mem_gen_prim_wrapper
      port map (
       addra(7 downto 0) => addra(7 downto 0),
       clka => clka,
@@ -489,11 +489,11 @@ entity RAM_8x256_blk3_blk_mem_gen_v8_4_1 is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is "RAM_8x256_blk3.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is "RAM_8x256_blk3.mif";
+  attribute C_INIT_FILE_NAME of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is 1;
+  attribute C_LOAD_INIT_FILE of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of RAM_8x256_blk3_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_MUX_PIPELINE_STAGES : integer;
@@ -756,11 +756,11 @@ architecture STRUCTURE of RAM_8x256_blk3 is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of U0 : label is "RAM_8x256_blk3.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of U0 : label is "RAM_8x256_blk3.mif";
+  attribute C_INIT_FILE_NAME of U0 : label is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of U0 : label is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of U0 : label is 1;
+  attribute C_LOAD_INIT_FILE of U0 : label is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of U0 : label is 0;
   attribute C_MUX_PIPELINE_STAGES : integer;

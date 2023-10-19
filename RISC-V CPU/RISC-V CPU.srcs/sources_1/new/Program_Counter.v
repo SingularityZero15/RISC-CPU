@@ -22,29 +22,30 @@
 
 module Program_Counter(
     input rst,
-    input Address_Enable,
+    input Instruction_Address_to_Bus_Enable,
     input Next_Instruction,
     input Jump_Enable,
     input [31:0] Offset_Address,
+    output [31:0] Instruction_Address_to_Bus,
     output [31:0] Instruction_Address
     );
 
     reg [31:0] __Instruction_Address;
-    assign Instruction_Address = Address_Enable ? __Instruction_Address : 32'bz;
-
-    always @(*) begin
-        if (rst) begin
+    assign Instruction_Address_to_Bus = Instruction_Address_to_Bus_Enable ? __Instruction_Address : 32'bz;
+    assign Instruction_Address = __Instruction_Address;
+    
+    always @(posedge Next_Instruction or negedge rst) begin
+        if(rst) begin
             __Instruction_Address <= 0;
-        end else if (Next_Instruction) begin
-            case (Jump_Enable)
-                1'b0: begin
-                    __Instruction_Address <= __Instruction_Address + 4'd4;
-                end 
-                1'b1: begin
-                    __Instruction_Address <= __Instruction_Address + Offset_Address;
-                end 
-            endcase
         end
+        case (Jump_Enable)
+            1'b0: begin
+                __Instruction_Address = __Instruction_Address + 4'd4;
+            end 
+            1'b1: begin
+                __Instruction_Address = __Instruction_Address + Offset_Address;
+            end 
+        endcase
     end
 
 endmodule

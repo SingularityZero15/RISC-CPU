@@ -22,8 +22,12 @@
 
 module Immediate_Number_Generater(
     input [31:0] Instruction,
+    input Immediate_Number_to_Bus_Enable,
+    output [31:0] Immediate_Number_to_Bus,
     output reg [31:0] Immediate_Number
     );
+
+    assign Immediate_Number_to_Bus = Immediate_Number_to_Bus_Enable ? Immediate_Number : 32'bz;
 
     always @(*) begin
         case (Instruction[6:0])

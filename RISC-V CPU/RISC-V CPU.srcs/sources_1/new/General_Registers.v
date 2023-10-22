@@ -24,7 +24,7 @@ module General_Registers(
     output reg [31:0] Read_Data_1,
     input [4:0] Read_Address_2,
     output [31:0] Read_Data_2,
-    input Store_Instruction,
+    input Read_Data_2_to_Bus_Enable,
     output [31:0] Read_Data_2_to_Bus,
     input [4:0] Write_Address,
     input [31:0] Write_Data,
@@ -34,7 +34,7 @@ module General_Registers(
     reg [31:0] Registers [31:0];
     reg [31:0] __Read_Data_2;
     assign Read_Data_2 = __Read_Data_2;
-    assign Read_Data_2_to_Bus = Store_Instruction ? __Read_Data_2 : 32'bz;
+    assign Read_Data_2_to_Bus = Read_Data_2_to_Bus_Enable ? __Read_Data_2 : 32'bz;
 
     always @(Read_Address_1) begin
         Read_Data_1 <= Registers[Read_Address_1];

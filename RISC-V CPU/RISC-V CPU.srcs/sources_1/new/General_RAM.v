@@ -22,6 +22,7 @@
 module General_RAM(
     input CLK,
     input Read_Enable,
+    input Read_Unsigned,
     input Write_Enable,
     input [1:0] Data_Width,
     input [31:0] Address,
@@ -42,28 +43,28 @@ module General_RAM(
         //Set address for each memory chip
         case (Address[1:0])
             2'b00: begin
-                Address_0 <= Address[9:2];
-                Address_1 <= Address[9:2];
-                Address_2 <= Address[9:2];
-                Address_3 <= Address[9:2];
+                Address_0 = Address[9:2];
+                Address_1 = Address[9:2];
+                Address_2 = Address[9:2];
+                Address_3 = Address[9:2];
             end
             2'b01: begin
-                Address_0 <= Address[9:2] + 1;
-                Address_1 <= Address[9:2];
-                Address_2 <= Address[9:2];
-                Address_3 <= Address[9:2];
+                Address_0 = Address[9:2] + 1;
+                Address_1 = Address[9:2];
+                Address_2 = Address[9:2];
+                Address_3 = Address[9:2];
             end
             2'b10: begin
-                Address_0 <= Address[9:2] + 1;
-                Address_1 <= Address[9:2] + 1;
-                Address_2 <= Address[9:2];
-                Address_3 <= Address[9:2];
+                Address_0 = Address[9:2] + 1;
+                Address_1 = Address[9:2] + 1;
+                Address_2 = Address[9:2];
+                Address_3 = Address[9:2];
             end
             2'b11: begin
-                Address_0 <= Address[9:2] + 1;
-                Address_1 <= Address[9:2] + 1;
-                Address_2 <= Address[9:2] + 1;
-                Address_3 <= Address[9:2];
+                Address_0 = Address[9:2] + 1;
+                Address_1 = Address[9:2] + 1;
+                Address_2 = Address[9:2] + 1;
+                Address_3 = Address[9:2];
             end
         endcase
         
@@ -73,291 +74,296 @@ module General_RAM(
                 2'b00: begin
                     case (Address[1:0])
                         2'b00: begin
-                            Write_Enable_0 <= Write_Enable;
-                            Write_Enable_1 <= 0;
-                            Write_Enable_2 <= 0;
-                            Write_Enable_3 <= 0;
+                            Write_Enable_0 = Write_Enable;
+                            Write_Enable_1 = 0;
+                            Write_Enable_2 = 0;
+                            Write_Enable_3 = 0;
                         end
                         2'b01: begin
-                            Write_Enable_1 <= Write_Enable;
-                            Write_Enable_2 <= 0;
-                            Write_Enable_3 <= 0;
-                            Write_Enable_0 <= 0;
+                            Write_Enable_1 = Write_Enable;
+                            Write_Enable_2 = 0;
+                            Write_Enable_3 = 0;
+                            Write_Enable_0 = 0;
                         end
                         2'b10: begin
-                            Write_Enable_2 <= Write_Enable;
-                            Write_Enable_3 <= 0;
-                            Write_Enable_0 <= 0;
-                            Write_Enable_1 <= 0;
+                            Write_Enable_2 = Write_Enable;
+                            Write_Enable_3 = 0;
+                            Write_Enable_0 = 0;
+                            Write_Enable_1 = 0;
                         end
                         2'b11: begin
-                            Write_Enable_3 <= Write_Enable;
-                            Write_Enable_0 <= 0;
-                            Write_Enable_1 <= 0;
-                            Write_Enable_2 <= 0;
+                            Write_Enable_3 = Write_Enable;
+                            Write_Enable_0 = 0;
+                            Write_Enable_1 = 0;
+                            Write_Enable_2 = 0;
                         end
                     endcase
                 end
                 2'b01: begin
                     case (Address[1:0])
                         2'b00: begin
-                            Write_Enable_0 <= Write_Enable;
-                            Write_Enable_1 <= Write_Enable;
-                            Write_Enable_2 <= 0;
-                            Write_Enable_3 <= 0;
+                            Write_Enable_0 = Write_Enable;
+                            Write_Enable_1 = Write_Enable;
+                            Write_Enable_2 = 0;
+                            Write_Enable_3 = 0;
                         end
                         2'b01: begin
-                            Write_Enable_1 <= Write_Enable;
-                            Write_Enable_2 <= Write_Enable;
-                            Write_Enable_3 <= 0;
-                            Write_Enable_0 <= 0;
+                            Write_Enable_1 = Write_Enable;
+                            Write_Enable_2 = Write_Enable;
+                            Write_Enable_3 = 0;
+                            Write_Enable_0 = 0;
                         end
                         2'b10: begin
-                            Write_Enable_2 <= Write_Enable;
-                            Write_Enable_3 <= Write_Enable;
-                            Write_Enable_0 <= 0;
-                            Write_Enable_1 <= 0;
+                            Write_Enable_2 = Write_Enable;
+                            Write_Enable_3 = Write_Enable;
+                            Write_Enable_0 = 0;
+                            Write_Enable_1 = 0;
                         end
                         2'b11: begin
-                            Write_Enable_3 <= Write_Enable;
-                            Write_Enable_0 <= Write_Enable;
-                            Write_Enable_1 <= 0;
-                            Write_Enable_2 <= 0;
+                            Write_Enable_3 = Write_Enable;
+                            Write_Enable_0 = Write_Enable;
+                            Write_Enable_1 = 0;
+                            Write_Enable_2 = 0;
                         end
                     endcase
                 end
                 2'b10: begin
-                    Write_Enable_0 <= Write_Enable;
-                    Write_Enable_1 <= Write_Enable;
-                    Write_Enable_2 <= Write_Enable;
-                    Write_Enable_3 <= Write_Enable;
+                    Write_Enable_0 = Write_Enable;
+                    Write_Enable_1 = Write_Enable;
+                    Write_Enable_2 = Write_Enable;
+                    Write_Enable_3 = Write_Enable;
                 end
                 2'b11: begin
-                    Write_Enable_0 <= Write_Enable;
-                    Write_Enable_1 <= Write_Enable;
-                    Write_Enable_2 <= Write_Enable;
-                    Write_Enable_3 <= Write_Enable;
+                    Write_Enable_0 = Write_Enable;
+                    Write_Enable_1 = Write_Enable;
+                    Write_Enable_2 = Write_Enable;
+                    Write_Enable_3 = Write_Enable;
                 end
             endcase
         end else begin
-            Write_Enable_0 <= 0;
-            Write_Enable_1 <= 0;
-            Write_Enable_2 <= 0;
-            Write_Enable_3 <= 0;
+            Write_Enable_0 = 0;
+            Write_Enable_1 = 0;
+            Write_Enable_2 = 0;
+            Write_Enable_3 = 0;
         end
 
+        //Arrange Output Data
         case (Data_Width)
             2'b00: begin
                 case (Address[1:0])
                     2'b00: begin
-                        Arranged_Data[7:0] <= Out_Data_0;
-                        Arranged_Data[31:8] <= 0;
+                        Arranged_Data[7:0] = Out_Data_0;
                     end
                     2'b01: begin
-                        Arranged_Data[7:0] <= Out_Data_1;
-                        Arranged_Data[31:8] <= 0;
+                        Arranged_Data[7:0] = Out_Data_1;
                     end
                     2'b10: begin
-                        Arranged_Data[7:0] <= Out_Data_2;
-                        Arranged_Data[31:8] <= 0;
+                        Arranged_Data[7:0] = Out_Data_2;
                     end
                     2'b11: begin
-                        Arranged_Data[7:0] <= Out_Data_3;
-                        Arranged_Data[31:8] <= 0;
+                        Arranged_Data[7:0] = Out_Data_3;
                     end
                 endcase
+                if (Read_Unsigned) begin
+                    Arranged_Data[31:8] = 0;
+                end else begin
+                    Arranged_Data[31:8] = Arranged_Data[7];
+                end
             end
             2'b01: begin
                 case (Address[1:0])
                     2'b00: begin
-                        Arranged_Data[7:0] <= Out_Data_0;
-                        Arranged_Data[15:8] <= Out_Data_1;
-                        Arranged_Data[31:16] <= 0;
+                        Arranged_Data[7:0] = Out_Data_0;
+                        Arranged_Data[15:8] = Out_Data_1;
                     end
                     2'b01: begin
-                        Arranged_Data[7:0] <= Out_Data_1;
-                        Arranged_Data[15:8] <= Out_Data_2;
-                        Arranged_Data[31:16] <= 0;
+                        Arranged_Data[7:0] = Out_Data_1;
+                        Arranged_Data[15:8] = Out_Data_2;
                     end
                     2'b10: begin
-                        Arranged_Data[7:0] <= Out_Data_2;
-                        Arranged_Data[15:8] <= Out_Data_3;
-                        Arranged_Data[31:16] <= 0;
+                        Arranged_Data[7:0] = Out_Data_2;
+                        Arranged_Data[15:8] = Out_Data_3;
                     end
                     2'b11: begin
-                        Arranged_Data[7:0] <= Out_Data_3;
-                        Arranged_Data[15:8] <= Out_Data_0;
-                        Arranged_Data[31:16] <= 0;
+                        Arranged_Data[7:0] = Out_Data_3;
+                        Arranged_Data[15:8] = Out_Data_0;
                     end
                 endcase
+                if (Read_Unsigned) begin
+                    Arranged_Data[31:16] = 0;
+                end else begin
+                    Arranged_Data[31:16] = Arranged_Data[15];
+                end
             end
             2'b10: begin
                 case (Address[1:0])
                     2'b00: begin
-                        Arranged_Data[7:0] <= Out_Data_0;
-                        Arranged_Data[15:8] <= Out_Data_1;
-                        Arranged_Data[23:16] <= Out_Data_2;
-                        Arranged_Data[31:24] <= Out_Data_3;
+                        Arranged_Data[7:0] = Out_Data_0;
+                        Arranged_Data[15:8] = Out_Data_1;
+                        Arranged_Data[23:16] = Out_Data_2;
+                        Arranged_Data[31:24] = Out_Data_3;
                     end
                     2'b01: begin
-                        Arranged_Data[7:0] <= Out_Data_1;
-                        Arranged_Data[15:8] <= Out_Data_2;
-                        Arranged_Data[23:16] <= Out_Data_3;
-                        Arranged_Data[31:24] <= Out_Data_0;
+                        Arranged_Data[7:0] = Out_Data_1;
+                        Arranged_Data[15:8] = Out_Data_2;
+                        Arranged_Data[23:16] = Out_Data_3;
+                        Arranged_Data[31:24] = Out_Data_0;
                     end
                     2'b10: begin
-                        Arranged_Data[7:0] <= Out_Data_2;
-                        Arranged_Data[15:8] <= Out_Data_3;
-                        Arranged_Data[23:16] <= Out_Data_0;
-                        Arranged_Data[31:24] <= Out_Data_1;
+                        Arranged_Data[7:0] = Out_Data_2;
+                        Arranged_Data[15:8] = Out_Data_3;
+                        Arranged_Data[23:16] = Out_Data_0;
+                        Arranged_Data[31:24] = Out_Data_1;
                     end
                     2'b11: begin
-                        Arranged_Data[7:0] <= Out_Data_3;
-                        Arranged_Data[15:8] <= Out_Data_0;
-                        Arranged_Data[23:16] <= Out_Data_1;
-                        Arranged_Data[31:24] <= Out_Data_2;
+                        Arranged_Data[7:0] = Out_Data_3;
+                        Arranged_Data[15:8] = Out_Data_0;
+                        Arranged_Data[23:16] = Out_Data_1;
+                        Arranged_Data[31:24] = Out_Data_2;
                     end
                 endcase
             end
             2'b11: begin
                 case (Address[1:0])
                     2'b00: begin
-                        Arranged_Data[7:0] <= Out_Data_0;
-                        Arranged_Data[15:8] <= Out_Data_1;
-                        Arranged_Data[23:16] <= Out_Data_2;
-                        Arranged_Data[31:24] <= Out_Data_3;
+                        Arranged_Data[7:0] = Out_Data_0;
+                        Arranged_Data[15:8] = Out_Data_1;
+                        Arranged_Data[23:16] = Out_Data_2;
+                        Arranged_Data[31:24] = Out_Data_3;
                     end
                     2'b01: begin
-                        Arranged_Data[7:0] <= Out_Data_1;
-                        Arranged_Data[15:8] <= Out_Data_2;
-                        Arranged_Data[23:16] <= Out_Data_3;
-                        Arranged_Data[31:24] <= Out_Data_0;
+                        Arranged_Data[7:0] = Out_Data_1;
+                        Arranged_Data[15:8] = Out_Data_2;
+                        Arranged_Data[23:16] = Out_Data_3;
+                        Arranged_Data[31:24] = Out_Data_0;
                     end
                     2'b10: begin
-                        Arranged_Data[7:0] <= Out_Data_2;
-                        Arranged_Data[15:8] <= Out_Data_3;
-                        Arranged_Data[23:16] <= Out_Data_0;
-                        Arranged_Data[31:24] <= Out_Data_1;
+                        Arranged_Data[7:0] = Out_Data_2;
+                        Arranged_Data[15:8] = Out_Data_3;
+                        Arranged_Data[23:16] = Out_Data_0;
+                        Arranged_Data[31:24] = Out_Data_1;
                     end
                     2'b11: begin
-                        Arranged_Data[7:0] <= Out_Data_3;
-                        Arranged_Data[15:8] <= Out_Data_0;
-                        Arranged_Data[23:16] <= Out_Data_1;
-                        Arranged_Data[31:24] <= Out_Data_2;
+                        Arranged_Data[7:0] = Out_Data_3;
+                        Arranged_Data[15:8] = Out_Data_0;
+                        Arranged_Data[23:16] = Out_Data_1;
+                        Arranged_Data[31:24] = Out_Data_2;
                     end
                 endcase
             end
         endcase
+
+        //Arrange Input Data
         case (Data_Width)
             2'b00: begin
                 case (Address[1:0])
                     2'b00: begin
-                        In_Data_0 <= In_Data[7:0];
-                        In_Data_1 <= 0;
-                        In_Data_2 <= 0;
-                        In_Data_3 <= 0;
+                        In_Data_0 = In_Data[7:0];
+                        In_Data_1 = 0;
+                        In_Data_2 = 0;
+                        In_Data_3 = 0;
                     end
                     2'b01: begin
-                        In_Data_1 <= In_Data[7:0];
-                        In_Data_2 <= 0;
-                        In_Data_3 <= 0;
-                        In_Data_0 <= 0;
+                        In_Data_1 = In_Data[7:0];
+                        In_Data_2 = 0;
+                        In_Data_3 = 0;
+                        In_Data_0 = 0;
                     end
                     2'b10: begin
-                        In_Data_2 <= In_Data[7:0];
-                        In_Data_3 <= 0;
-                        In_Data_0 <= 0;
-                        In_Data_1 <= 0;
+                        In_Data_2 = In_Data[7:0];
+                        In_Data_3 = 0;
+                        In_Data_0 = 0;
+                        In_Data_1 = 0;
                     end
                     2'b11: begin
-                        In_Data_3 <= In_Data[7:0];
-                        In_Data_0 <= 0;
-                        In_Data_1 <= 0;
-                        In_Data_2 <= 0;
+                        In_Data_3 = In_Data[7:0];
+                        In_Data_0 = 0;
+                        In_Data_1 = 0;
+                        In_Data_2 = 0;
                     end
                 endcase
             end
             2'b01: begin
                 case (Address[1:0])
                     2'b00: begin
-                        In_Data_0 <= In_Data[7:0];
-                        In_Data_1 <= In_Data[15:8];
-                        In_Data_2 <= 0;
-                        In_Data_3 <= 0;
+                        In_Data_0 = In_Data[7:0];
+                        In_Data_1 = In_Data[15:8];
+                        In_Data_2 = 0;
+                        In_Data_3 = 0;
                     end
                     2'b01: begin
-                        In_Data_1 <= In_Data[7:0];
-                        In_Data_2 <= In_Data[15:8];
-                        In_Data_3 <= 0;
-                        In_Data_0 <= 0;
+                        In_Data_1 = In_Data[7:0];
+                        In_Data_2 = In_Data[15:8];
+                        In_Data_3 = 0;
+                        In_Data_0 = 0;
                     end
                     2'b10: begin
-                        In_Data_2 <= In_Data[7:0];
-                        In_Data_3 <= In_Data[15:8];
-                        In_Data_0 <= 0;
-                        In_Data_1 <= 0;
+                        In_Data_2 = In_Data[7:0];
+                        In_Data_3 = In_Data[15:8];
+                        In_Data_0 = 0;
+                        In_Data_1 = 0;
                     end
                     2'b11: begin
-                        In_Data_3 <= In_Data[7:0];
-                        In_Data_0 <= In_Data[15:8];
-                        In_Data_1 <= 0;
-                        In_Data_2 <= 0;
+                        In_Data_3 = In_Data[7:0];
+                        In_Data_0 = In_Data[15:8];
+                        In_Data_1 = 0;
+                        In_Data_2 = 0;
                     end
                 endcase
             end
             2'b10: begin
                 case (Address[1:0])
                     2'b00: begin
-                        In_Data_0 <= In_Data[7:0];
-                        In_Data_1 <= In_Data[15:8];
-                        In_Data_2 <= In_Data[23:16];
-                        In_Data_3 <= In_Data[31:24];
+                        In_Data_0 = In_Data[7:0];
+                        In_Data_1 = In_Data[15:8];
+                        In_Data_2 = In_Data[23:16];
+                        In_Data_3 = In_Data[31:24];
                     end
                     2'b01: begin
-                        In_Data_1 <= In_Data[7:0];
-                        In_Data_2 <= In_Data[15:8];
-                        In_Data_3 <= In_Data[23:16];
-                        In_Data_0 <= In_Data[31:24];
+                        In_Data_1 = In_Data[7:0];
+                        In_Data_2 = In_Data[15:8];
+                        In_Data_3 = In_Data[23:16];
+                        In_Data_0 = In_Data[31:24];
                     end
                     2'b10: begin
-                        In_Data_2 <= In_Data[7:0];
-                        In_Data_3 <= In_Data[15:8];
-                        In_Data_0 <= In_Data[23:16];
-                        In_Data_1 <= In_Data[31:24];
+                        In_Data_2 = In_Data[7:0];
+                        In_Data_3 = In_Data[15:8];
+                        In_Data_0 = In_Data[23:16];
+                        In_Data_1 = In_Data[31:24];
                     end
                     2'b11: begin
-                        In_Data_3 <= In_Data[7:0];
-                        In_Data_0 <= In_Data[15:8];
-                        In_Data_1 <= In_Data[23:16];
-                        In_Data_2 <= In_Data[31:24];
+                        In_Data_3 = In_Data[7:0];
+                        In_Data_0 = In_Data[15:8];
+                        In_Data_1 = In_Data[23:16];
+                        In_Data_2 = In_Data[31:24];
                     end
                 endcase
             end
             2'b11: begin
                 case (Address[1:0])
                     2'b00: begin
-                        In_Data_0 <= In_Data[7:0];
-                        In_Data_1 <= In_Data[15:8];
-                        In_Data_2 <= In_Data[23:16];
-                        In_Data_3 <= In_Data[31:24];
+                        In_Data_0 = In_Data[7:0];
+                        In_Data_1 = In_Data[15:8];
+                        In_Data_2 = In_Data[23:16];
+                        In_Data_3 = In_Data[31:24];
                     end
                     2'b01: begin
-                        In_Data_1 <= In_Data[7:0];
-                        In_Data_2 <= In_Data[15:8];
-                        In_Data_3 <= In_Data[23:16];
-                        In_Data_0 <= In_Data[31:24];
+                        In_Data_1 = In_Data[7:0];
+                        In_Data_2 = In_Data[15:8];
+                        In_Data_3 = In_Data[23:16];
+                        In_Data_0 = In_Data[31:24];
                     end
                     2'b10: begin
-                        In_Data_2 <= In_Data[7:0];
-                        In_Data_3 <= In_Data[15:8];
-                        In_Data_0 <= In_Data[23:16];
-                        In_Data_1 <= In_Data[31:24];
+                        In_Data_2 = In_Data[7:0];
+                        In_Data_3 = In_Data[15:8];
+                        In_Data_0 = In_Data[23:16];
+                        In_Data_1 = In_Data[31:24];
                     end
                     2'b11: begin
-                        In_Data_3 <= In_Data[7:0];
-                        In_Data_0 <= In_Data[15:8];
-                        In_Data_1 <= In_Data[23:16];
-                        In_Data_2 <= In_Data[31:24];
+                        In_Data_3 = In_Data[7:0];
+                        In_Data_0 = In_Data[15:8];
+                        In_Data_1 = In_Data[23:16];
+                        In_Data_2 = In_Data[31:24];
                     end
                 endcase
             end

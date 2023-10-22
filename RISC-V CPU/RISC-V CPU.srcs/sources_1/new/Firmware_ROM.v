@@ -37,7 +37,7 @@ module Firmware_ROM(
         end
     end
 
-    ROM_32x256 your_instance_name (
+    ROM_32x256 inst (
     .clka(CLK),    // input wire clka
     .addra(Address[9:2]),  // input wire [7 : 0] addra
     .douta(__Out_Data)  // output wire [31 : 0] douta

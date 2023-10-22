@@ -45,6 +45,8 @@ module General_Registers(
     end
 
     always @(posedge Register_Write) begin
-        Registers[Write_Address] <= Write_Data;
+        if (Write_Address != 5'b0) begin
+            Registers[Write_Address] <= Write_Data;
+        end
     end
 endmodule

@@ -22,6 +22,7 @@
 
 module Program_Counter(
     input rst,
+    input clk,
     input Instruction_Address_to_Bus_Enable,
     input Next_Instruction,
     input Jump_Enable,
@@ -38,7 +39,7 @@ module Program_Counter(
     wire [31:0] __In_Address;
     assign __In_Address = {In_Address[31:1], 1'b0};
     
-    always @(posedge Next_Instruction or negedge rst) begin
+    always @(posedge clk or negedge rst) begin
         if(rst) begin
             __Instruction_Address <= 0;
         end else if (Next_Instruction) begin

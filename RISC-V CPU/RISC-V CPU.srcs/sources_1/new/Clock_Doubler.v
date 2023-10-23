@@ -22,12 +22,11 @@
 
 module Clock_Doubler(
     input clk_100m,
-    input rst,
-    output clk_200m
+    output clk_200m,
+    output clk_100m_d
     );
 
-    wire clk_100m_d;
-    assign clk_200m = (clk_100m ^ clk_100m_d) & (~rst);
+    assign clk_200m = (clk_100m ^ clk_100m_d)/* & (~rst)*/;
 
     clk_wiz_0 inst(
     .clk_out1(clk_100m_d),

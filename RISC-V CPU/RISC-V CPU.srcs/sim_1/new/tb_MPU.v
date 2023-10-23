@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/10/15 20:11:06
+// Create Date: 2023/10/23 23:13:31
 // Design Name: 
-// Module Name: Instruction_Register
+// Module Name: tb_MPU
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,17 +19,31 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define PERIOD 10
 
-module Instruction_Register(
-    input Write_Enable,
-    input [31:0] In_Instruction,
-    output reg [31:0] Out_Instruction
+module tb_MPU(
+
     );
 
-    always @(*) begin
-        if (Write_Enable) begin
-            Out_Instruction = In_Instruction;
-        end
+    reg Clock;
+    reg Reset;
+
+    always begin
+        Clock <= 1'b1;
+        #(`PERIOD/2)
+        Clock <= 1'b0;
+        #(`PERIOD/2);
     end
+
+    initial begin
+        Reset = 1;
+        #500
+        Reset = 0;
+    end
+
+    Micro_Processor_Unit inst(
+        .Clock(Clock),
+        .Reset(Reset)
+    );
 
 endmodule

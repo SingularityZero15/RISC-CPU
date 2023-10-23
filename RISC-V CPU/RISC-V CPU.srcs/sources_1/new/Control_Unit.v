@@ -101,18 +101,6 @@ module Control_Unit(
             end
         end
     end
-
-    always @(posedge CLK or negedge RST) begin
-        if (RST) begin
-            current_state = 0;
-        end else begin
-            if (next_state == 3'b110) begin
-                current_state = 3'b0;
-            end else begin
-                current_state = next_state;
-            end
-        end
-    end
     
     always @(*) begin
         case (current_state)
@@ -140,10 +128,10 @@ module Control_Unit(
                 Return_Address_Stack_pop_Enable = 1'b0;
                 Return_Address_Stack_push_Enable = 1'b0;
 
-                External_Read_Enable = 1'b0;
+                External_Read_Enable = 1'b1;
                 External_Read_Unsigned = 1'b0;
                 External_Write_Enable = 1'b0;
-                External_Data_Width = 2'b0;
+                External_Data_Width = 2'b10;
             end
             3'b001: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;

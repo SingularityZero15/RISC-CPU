@@ -23,6 +23,7 @@
 module CPU_Core(
     input External_Clock,
     input External_Reset,
+    output Memory_Clock,
     inout [31:0] Address_Bus,
     inout [31:0] Data_Bus,
     inout [4:0] Control_Bus
@@ -115,8 +116,8 @@ module CPU_Core(
 
     Clock_Doubler Clock_Doubler_inst(
         .clk_100m(External_Clock),
-        .rst(External_Reset),
-        .clk_200m(Doubled_Clock)
+        .clk_200m(Doubled_Clock),
+        .clk_100m_d(Memory_Clock)
     );
 
     Control_Unit Control_Unit_inst(
@@ -227,6 +228,7 @@ module CPU_Core(
 
     Program_Counter Program_Counter_inst(
         .rst(Program_Counter_rst),
+        .clk(Doubled_Clock),
         .Instruction_Address_to_Bus_Enable(Program_Counter_Instruction_Address_to_Bus_Enable),
         .Next_Instruction(Program_Counter_Next_Instruction),
         .Jump_Enable(Program_Counter_Jump_Enable),

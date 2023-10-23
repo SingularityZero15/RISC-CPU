@@ -28,17 +28,19 @@ module Micro_Processor_Unit(
     wire [31:0] Address_Bus;
     wire [31:0] Data_Bus;
     wire [4:0] Control_Bus;
+    wire Memory_Clock;
 
     CPU_Core CPU_Core_inst(
         .External_Clock(Clock),
         .External_Reset(Reset),
+        .Memory_Clock(Memory_Clock),
         .Address_Bus(Address_Bus),
         .Data_Bus(Data_Bus),
         .Control_Bus(Control_Bus)
     );
 
     Firmware_ROM Firmware_ROM_inst(
-        .CLK(Clock),
+        .CLK(Memory_Clock),
         .Read_Enable(Control_Bus[0]),
         .Read_Unsigned(Control_Bus[1]),
         .Data_Width(Control_Bus[4:3]),
@@ -47,7 +49,7 @@ module Micro_Processor_Unit(
     );
 
     General_RAM General_RAM_inst(
-        .CLK(Clock),
+        .CLK(Memory_Clock),
         .Read_Enable(Control_Bus[0]),
         .Read_Unsigned(Control_Bus[1]),
         .Write_Enable(Control_Bus[2]),

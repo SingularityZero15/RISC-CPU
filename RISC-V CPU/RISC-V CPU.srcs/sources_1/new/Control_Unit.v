@@ -90,7 +90,7 @@ module Control_Unit(
     assign next_state = current_state + 1;
     assign Program_Counter_rst = RST;
 
-    always @(posedge CLK or negedge RST) begin
+    always @(posedge CLK) begin
         if (RST) begin
             current_state = 0;
         end else begin
@@ -104,7 +104,7 @@ module Control_Unit(
     
     always @(*) begin
         case (current_state)
-            3'b000: begin
+            3'b001: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;
 
                 Program_Counter_Instruction_Address_to_Bus_Enable = 1'b1;
@@ -133,10 +133,10 @@ module Control_Unit(
                 External_Write_Enable = 1'b0;
                 External_Data_Width = 2'b10;
             end
-            3'b001: begin
+            3'b010: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;
 
-                Program_Counter_Instruction_Address_to_Bus_Enable = 1'b0;
+                Program_Counter_Instruction_Address_to_Bus_Enable = 1'b1;
                 Program_Counter_Next_Instruction = 1'b0;
                 Program_Counter_Jump_Enable = 1'b0;
                 Program_Counter_Branch_Enable = 1'b0;
@@ -157,12 +157,12 @@ module Control_Unit(
                 Return_Address_Stack_pop_Enable = 1'b0;
                 Return_Address_Stack_push_Enable = 1'b0;
 
-                External_Read_Enable = 1'b0;
+                External_Read_Enable = 1'b1;
                 External_Read_Unsigned = 1'b0;
                 External_Write_Enable = 1'b0;
-                External_Data_Width = 2'b0;
+                External_Data_Width = 2'b10;
             end
-            3'b010: begin
+            3'b011: begin
                 Immediate_Number_to_Bus_Enable = Immediate_Num_to_dBus;
 
                 Program_Counter_Instruction_Address_to_Bus_Enable = 1'b0;
@@ -200,7 +200,7 @@ module Control_Unit(
                 External_Write_Enable = 1'b0;
                 External_Data_Width = 2'b0;
             end
-            3'b011: begin
+            3'b100: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;
 
                 Program_Counter_Instruction_Address_to_Bus_Enable = 1'b0;
@@ -229,7 +229,7 @@ module Control_Unit(
                 External_Write_Enable = External_Write;
                 External_Data_Width = External_W_R_Data_Width;
             end
-            3'b100: begin
+            3'b101: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;
 
                 Program_Counter_Instruction_Address_to_Bus_Enable = 1'b0;
@@ -258,7 +258,7 @@ module Control_Unit(
                 External_Write_Enable = 1'b0;
                 External_Data_Width = 2'b0;
             end
-            3'b101: begin
+            3'b000: begin
                 Immediate_Number_to_Bus_Enable = 1'b0;
 
                 Program_Counter_Instruction_Address_to_Bus_Enable = 1'b0;

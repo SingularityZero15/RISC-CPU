@@ -40,74 +40,74 @@ module Arithmetic_Logic_Unit(
         case (funct3)
             3'b000: begin
                 if (funct7) begin
-                    __result <= operand1 - operand2;
+                    __result = operand1 - operand2;
                 end else begin
-                    __result <= operand1 + operand2;
+                    __result = operand1 + operand2;
                 end
                 if (operand1 == operand2) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
             3'b001: begin
-                __result <= operand1 << operand2[4:0];
+                __result = operand1 << operand2[4:0];
                 if (operand1 != operand2) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
             3'b010: begin
-                result_logic <= 0;
+                result_logic = 0;
                 if ($signed(operand1) < $signed(operand2)) begin
-                    __result <= 32'b1;
+                    __result = 32'b1;
                 end else begin
-                    __result <= 32'b0;
+                    __result = 32'b0;
                 end
             end
             3'b011: begin
-                result_logic <= 0;
+                result_logic = 0;
                 if (operand1 < operand2) begin
-                    __result <= 32'b1;
+                    __result = 32'b1;
                 end else begin
-                    __result <= 32'b0;
+                    __result = 32'b0;
                 end
             end
             3'b100: begin
-                __result <= operand1 ^ operand2;
+                __result = operand1 ^ operand2;
                 if ($signed(operand1) < $signed(operand2)) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
             3'b101: begin
                 if (funct7) begin
-                    __result <= $signed(operand1) >>> operand2[4:0];
+                    __result = $signed(operand1) >>> operand2[4:0];
                 end else begin
-                    __result <= operand1 >> operand2[4:0];
+                    __result = operand1 >> operand2[4:0];
                 end
                 if ($signed(operand1) >= $signed(operand2)) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
             3'b110: begin
-                __result <= operand1 | operand2;
+                __result = operand1 | operand2;
                 if (operand1 < operand2) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
             3'b111: begin
-                __result <= operand1 & operand2;
+                __result = operand1 & operand2;
                 if (operand1 >= operand2) begin
-                    result_logic <= 1'b1;
+                    result_logic = 1'b1;
                 end else begin
-                    result_logic <= 1'b0;
+                    result_logic = 1'b0;
                 end
             end
         endcase

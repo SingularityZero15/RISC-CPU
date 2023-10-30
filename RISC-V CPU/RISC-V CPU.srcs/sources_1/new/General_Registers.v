@@ -36,17 +36,25 @@ module General_Registers(
     assign Read_Data_2 = __Read_Data_2;
     assign Read_Data_2_to_Bus = Read_Data_2_to_Bus_Enable ? __Read_Data_2 : 32'bz;
 
+    
+    integer i = 0;
+    initial begin
+        for (i = 0; i < 32 ; i = i + 1) begin
+            Registers[i] = 0;
+        end
+    end
+
     always @(Read_Address_1) begin
-        Read_Data_1 <= Registers[Read_Address_1];
+        Read_Data_1 = Registers[Read_Address_1];
     end
 
     always @(Read_Address_2) begin
-        __Read_Data_2 <= Registers[Read_Address_2];
+        __Read_Data_2 = Registers[Read_Address_2];
     end
 
     always @(posedge Register_Write) begin
         if (Write_Address != 5'b0) begin
-            Registers[Write_Address] <= Write_Data;
+            Registers[Write_Address] = Write_Data;
         end
     end
 endmodule

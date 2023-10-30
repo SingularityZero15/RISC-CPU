@@ -193,7 +193,7 @@ module CPU_Core(
         .ALU_Operate_funct7(ALU_Operate_funct7),
         .ALU_Operate_result_Enable(ALU_Operate_result_Enable),
         .ALU_Operate_result_as_Address_Enable(ALU_Operate_result_as_Address_Enable),
-        .ALU_Operate_op1_Instruction_Address(External_DALU_Operate_op1_Instruction_Addressata_Width),
+        .ALU_Operate_op1_Instruction_Address(ALU_Operate_op1_Instruction_Address),
         .ALU_Operate_op2_Immediate_Num(ALU_Operate_op2_Immediate_Num),
 
         .Register_to_dBus(Register_to_dBus),

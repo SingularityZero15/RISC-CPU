@@ -313,14 +313,14 @@ module Instruction_Decoder(
                 Reg_Store_Pop_Temp = 1'b0;
             end
             7'b0110011: begin
-                ALU_Operate = 1'b0;
-                ALU_Operate_funct3 = 3'b0;
+                ALU_Operate = 1'b1;
+                ALU_Operate_funct3 = Instruction[14:12];
                 if (Instruction[14:12] == 3'b101 || Instruction[14:12] == 3'b0) begin
                     ALU_Operate_funct7 = Instruction[30];
                 end else begin
                     ALU_Operate_funct7 = 1'b0;
                 end
-                ALU_Operate_result_Enable = 1'b0;
+                ALU_Operate_result_Enable = 1'b1;
                 ALU_Operate_result_as_Address_Enable = 1'b0;
                 ALU_Operate_op1_Instruction_Address = 1'b0;
                 ALU_Operate_op2_Immediate_Num = 1'b0;
@@ -329,7 +329,7 @@ module Instruction_Decoder(
                 Immediate_Num_to_dBus = 1'b0;
                 RAS_Pop_to_Temp = 1'b0;
 
-                Store_to_Register = 1'b0;
+                Store_to_Register = 1'b1;
                 Store_to_Register_Write_Address = 1'b0;
 
                 External_W_R_Data_Width = 2'b0;

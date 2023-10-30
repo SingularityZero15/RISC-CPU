@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_MPU_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_MPU" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="451450000fs"></ZoomStartTime>
+      <ZoomEndTime time="580250001fs"></ZoomEndTime>
+      <Cursor1Time time="620050000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="221"></NameColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Address_1" type="array">
+      <obj_property name="ElementShortName">Read_Address_1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Read_Address_1[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Data_1" type="array">
+      <obj_property name="ElementShortName">Read_Data_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Read_Data_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Address_2" type="array">
+      <obj_property name="ElementShortName">Read_Address_2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Read_Address_2[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Data_2" type="array">
+      <obj_property name="ElementShortName">Read_Data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Read_Data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Data_2_to_Bus_Enable" type="logic">
+      <obj_property name="ElementShortName">Read_Data_2_to_Bus_Enable</obj_property>
+      <obj_property name="ObjectShortName">Read_Data_2_to_Bus_Enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Read_Data_2_to_Bus" type="array">
+      <obj_property name="ElementShortName">Read_Data_2_to_Bus[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Read_Data_2_to_Bus[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Write_Address" type="array">
+      <obj_property name="ElementShortName">Write_Address[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Write_Address[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Write_Data" type="array">
+      <obj_property name="ElementShortName">Write_Data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Write_Data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Register_Write" type="logic">
+      <obj_property name="ElementShortName">Register_Write</obj_property>
+      <obj_property name="ObjectShortName">Register_Write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/Registers" type="array">
+      <obj_property name="ElementShortName">Registers[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Registers[31:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/__Read_Data_2" type="array">
+      <obj_property name="ElementShortName">__Read_Data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">__Read_Data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MPU/inst/CPU_Core_inst/General_Registers_inst/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -33,14 +33,23 @@ module Controller(
 
     always @(*) begin
         case (Instruction)
-            default: begin
+            7'b0010011: begin
                 Branch = 0;
                 MemRead = 0;
                 MemtoReg = 0;
-                ALUOp = 0;
+                ALUOp = 1;
+                MemWrite = 0;
+                ALUSrc = 1;
+                RegWrite = 1;
+            end
+            7'b0110011: begin
+                Branch = 0;
+                MemRead = 0;
+                MemtoReg = 0;
+                ALUOp = 1;
                 MemWrite = 0;
                 ALUSrc = 0;
-                RegWrite = 0;
+                RegWrite = 1;
             end
             default: begin
                 Branch = 0;

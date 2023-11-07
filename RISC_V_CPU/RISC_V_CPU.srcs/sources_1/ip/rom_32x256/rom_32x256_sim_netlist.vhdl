@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sun Nov  5 19:13:59 2023
+-- Date        : Tue Nov  7 16:25:41 2023
 -- Host        : DESKTOP-R2U1HPU running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/gjk19/Desktop/RISC
---               CPU/RISC_V_CPU/RISC_V_CPU.srcs/sources_1/ip/rom_32x256/rom_32x256_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top rom_32x256 -prefix
+--               rom_32x256_ rom_32x256_sim_netlist.vhdl
 -- Design      : rom_32x256
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,17 +14,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity rom_32x256_blk_mem_gen_prim_wrapper is
+entity rom_32x256_blk_mem_gen_prim_wrapper_init is
   port (
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 );
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
-end rom_32x256_blk_mem_gen_prim_wrapper;
+end rom_32x256_blk_mem_gen_prim_wrapper_init;
 
-architecture STRUCTURE of rom_32x256_blk_mem_gen_prim_wrapper is
+architecture STRUCTURE of rom_32x256_blk_mem_gen_prim_wrapper_init is
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_32\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_33\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram_n_34\ : STD_LOGIC;
@@ -120,7 +118,7 @@ begin
       IS_RSTREGARSTREG_INVERTED => '0',
       IS_RSTREGB_INVERTED => '0',
       RAM_MODE => "TDP",
-      RDADDR_COLLISION_HWCONFIG => "DELAYED_WRITE",
+      RDADDR_COLLISION_HWCONFIG => "PERFORMANCE",
       READ_WIDTH_A => 18,
       READ_WIDTH_B => 18,
       RSTREG_PRIORITY_A => "REGCE",
@@ -175,13 +173,11 @@ entity rom_32x256_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end rom_32x256_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of rom_32x256_blk_mem_gen_prim_width is
 begin
-\prim_noinit.ram\: entity work.rom_32x256_blk_mem_gen_prim_wrapper
+\prim_init.ram\: entity work.rom_32x256_blk_mem_gen_prim_wrapper_init
      port map (
       addra(7 downto 0) => addra(7 downto 0),
       clka => clka,
@@ -198,8 +194,6 @@ entity rom_32x256_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end rom_32x256_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of rom_32x256_blk_mem_gen_generic_cstr is
@@ -221,8 +215,6 @@ entity rom_32x256_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end rom_32x256_blk_mem_gen_top;
 
 architecture STRUCTURE of rom_32x256_blk_mem_gen_top is
@@ -244,8 +236,6 @@ entity rom_32x256_blk_mem_gen_v8_4_1_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
 end rom_32x256_blk_mem_gen_v8_4_1_synth;
 
 architecture STRUCTURE of rom_32x256_blk_mem_gen_v8_4_1_synth is
@@ -412,11 +402,11 @@ entity rom_32x256_blk_mem_gen_v8_4_1 is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of rom_32x256_blk_mem_gen_v8_4_1 : entity is "rom_32x256.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of rom_32x256_blk_mem_gen_v8_4_1 : entity is "no_coe_file_loaded";
+  attribute C_INIT_FILE_NAME of rom_32x256_blk_mem_gen_v8_4_1 : entity is "rom_32x256.mif";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of rom_32x256_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of rom_32x256_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_LOAD_INIT_FILE of rom_32x256_blk_mem_gen_v8_4_1 : entity is 1;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of rom_32x256_blk_mem_gen_v8_4_1 : entity is 3;
   attribute C_MUX_PIPELINE_STAGES : integer;
@@ -473,8 +463,6 @@ entity rom_32x256_blk_mem_gen_v8_4_1 is
   attribute C_WRITE_WIDTH_B of rom_32x256_blk_mem_gen_v8_4_1 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of rom_32x256_blk_mem_gen_v8_4_1 : entity is "zynq";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rom_32x256_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of rom_32x256_blk_mem_gen_v8_4_1 : entity is "yes";
 end rom_32x256_blk_mem_gen_v8_4_1;
@@ -723,11 +711,11 @@ architecture STRUCTURE of rom_32x256 is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of U0 : label is "rom_32x256.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of U0 : label is "no_coe_file_loaded";
+  attribute C_INIT_FILE_NAME of U0 : label is "rom_32x256.mif";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of U0 : label is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of U0 : label is 0;
+  attribute C_LOAD_INIT_FILE of U0 : label is 1;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of U0 : label is 3;
   attribute C_MUX_PIPELINE_STAGES : integer;

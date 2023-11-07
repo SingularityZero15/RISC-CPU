@@ -21,6 +21,7 @@
 
 
 module Register_File(
+    input clk,
     input [4:0] Read_Register_1,
     output [31:0] Read_Data_1,
     input [4:0] Read_Register_2,
@@ -30,13 +31,23 @@ module Register_File(
     input RegWrite
     );
     
+    integer i;
+    
     reg [31:0] Registers [31:0];
     assign Read_Data_1 = Registers[Read_Register_1];
     assign Read_Data_2 = Registers[Read_Register_2];
 
-    always @(posedge RegWrite) begin
-        if (Write_Register != 0) begin
-            Registers[Write_Register] = Write_Data;
+    always @(posedge clk) begin
+        if (RegWrite) begin
+            if (Write_Register != 0) begin
+                Registers[Write_Register] = Write_Data;
+            end
+        end
+    end
+
+    initial begin
+        for (i = 0; i < 32; i = i + 1) begin
+            Registers[i] = 0;
         end
     end
 endmodule

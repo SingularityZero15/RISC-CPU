@@ -21,6 +21,20 @@
 
 
 module Immediate_Number_Generater(
-
+    input [31:0] Instruction,
+    output reg [31:0] Immediate_Number
     );
+
+    always @(*) begin
+        case (Instruction[6:0])
+            7'b0010011: begin
+                Immediate_Number[11:0] = Instruction[31:20];
+                Immediate_Number[31:12] = {20{Instruction[31]}};
+            end 
+            default: begin
+                Immediate_Number = 0;
+            end
+        endcase
+    end
+
 endmodule

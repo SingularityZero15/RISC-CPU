@@ -22,6 +22,7 @@
 
 module Instruction_Fetch(
     input clk,
+    input rst,
     input [31:0] Instruction_Address,
     input PCSrc,
     output [31:0] PC_Address,
@@ -32,7 +33,9 @@ module Instruction_Fetch(
     assign PC_Address = PC;
 
     always @(posedge clk) begin
-        if(PCSrc) begin
+        if(rst) begin
+            PC = 0;
+        end else if(PCSrc) begin
             PC = Instruction_Address;
         end else begin
             PC = PC + 4;
@@ -40,7 +43,7 @@ module Instruction_Fetch(
     end
 
     rom_32x256 Instruction_Memory (
-        .clka(clk),    // input wire clka
+        .clka(~clk),    // input wire clka
         .addra(PC[9:2]),  // input wire [7 : 0] addra
         .douta(Instruction)  // output wire [31 : 0] douta
     );

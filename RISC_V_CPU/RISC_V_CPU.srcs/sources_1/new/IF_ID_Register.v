@@ -22,15 +22,23 @@
 
 module IF_ID_Register(
     input clk,
+    input rst,
+
     input [31:0] PC_Address_In,
-    output reg [31:0] PC_Address_Out,
     input [31:0] Instruction_In,
+    
+    output reg [31:0] PC_Address_Out,
     output reg [31:0] Instruction_Out
     );
 
     always @(posedge clk) begin
-        PC_Address_Out = PC_Address_In;
-        Instruction_Out = Instruction_In;
+        if (rst) begin
+            PC_Address_Out = 0;
+            Instruction_Out = 0;
+        end else begin
+            PC_Address_Out = PC_Address_In;
+            Instruction_Out = Instruction_In;
+        end
     end
 
 endmodule

@@ -24,7 +24,7 @@ module Memory(
     input clk,
 
     input Branch,
-    input MemRead,
+    input [2:0] MemConf,
     input MemWrite,
 
     input Zero,
@@ -39,9 +39,9 @@ module Memory(
     
     Data_Memory Data_Memory_inst(
         .clk(~clk),
-        // .Read_Unsigned(),
+        .Read_Unsigned(MemConf[2]),
         .Write_Enable(MemWrite),
-        // .Data_Width(),
+        .Data_Width(MemConf[1:0]),
         .Address(ALU_result),
         .In_Data(Read_Data_2),
         .Out_Data(Read_Data)

@@ -25,7 +25,7 @@ module EX_MEM_Register(
     input rst,
 
     input Branch_In,
-    input MemRead_In,
+    input [2:0] MemConf_In,
     input MemtoReg_In,
     input MemWrite_In,
     input RegWrite_In,
@@ -37,7 +37,7 @@ module EX_MEM_Register(
     input [4:0] Instruction_11_7_In,
 
     output reg Branch_Out,
-    output reg MemRead_Out,
+    output reg [2:0] MemConf_Out,
     output reg MemtoReg_Out,
     output reg MemWrite_Out,
     output reg RegWrite_Out,
@@ -50,23 +50,9 @@ module EX_MEM_Register(
     );
 
     always @(posedge clk) begin
-        Branch_Out = Branch_In;
-        MemRead_Out = MemRead_In;
-        MemtoReg_Out = MemtoReg_In;
-        MemWrite_Out = MemWrite_In;
-        RegWrite_Out = RegWrite_In;
-
-        Instruction_Address_Out = Instruction_Address_In;
-        Zero_Out = Zero_In;
-        ALU_result_Out = ALU_result_In;
-        Read_Data_2_Out = Read_Data_2_In;
-        Instruction_11_7_Out = Instruction_11_7_In;
-    end
-
-    always @(posedge clk) begin
         if (rst) begin
             Branch_Out = 0;
-            MemRead_Out = 0;
+            MemConf_Out = 0;
             MemtoReg_Out = 0;
             MemWrite_Out = 0;
             RegWrite_Out = 0;
@@ -78,7 +64,7 @@ module EX_MEM_Register(
             Instruction_11_7_Out = 0;
         end else begin
             Branch_Out = Branch_In;
-            MemRead_Out = MemRead_In;
+            MemConf_Out = MemConf_In;
             MemtoReg_Out = MemtoReg_In;
             MemWrite_Out = MemWrite_In;
             RegWrite_Out = RegWrite_In;

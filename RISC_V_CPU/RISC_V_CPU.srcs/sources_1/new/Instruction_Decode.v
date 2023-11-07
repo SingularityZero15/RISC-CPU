@@ -33,26 +33,30 @@ module Instruction_Decode(
     output [31:0] Immediate_Number,
 
     output Branch,
-    output MemRead,
+    output [2:0] MemConf,
     output MemtoReg,
-    output ALUOp,
+    output [1:0] ALUOp,
     output MemWrite,
     output ALUSrc,
     output RegWrite_Out,
+    output ALU_Rs1_Zero,
 
     output [3:0] Instruction_30_14_12,
-    output [4:0] Instruction_11_7
+    output [4:0] Instruction_11_7,
+    output [4:0] Instruction_19_15,
+    output [4:0] Instruction_24_20
     );
 
     Controller Controller_inst(
-        .Instruction(Instruction[6:0]),
+        .Instruction_14_12_6_0({Instruction[14:12], Instruction[6:0]}),
         .Branch(Branch),
-        .MemRead(MemRead),
+        .MemConf(MemConf),
         .MemtoReg(MemtoReg),
         .ALUOp(ALUOp),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc),
-        .RegWrite(RegWrite_Out)
+        .RegWrite(RegWrite_Out),
+        .ALU_Rs1_Zero(ALU_Rs1_Zero)
     );
 
     Register_File Register_File_inst(
@@ -73,5 +77,7 @@ module Instruction_Decode(
 
     assign Instruction_30_14_12 = {Instruction[30], Instruction[14:12]};
     assign Instruction_11_7 = Instruction[11:7];
+    assign Instruction_19_15 = Instruction[19:15];
+    assign Instruction_24_20 = Instruction[24:20];
 
 endmodule

@@ -40,21 +40,24 @@ module CPU_Core(
     wire [31:0] ID_REG_Read_Data_2;
     wire [31:0] ID_REG_Immediate_Number;
     wire ID_REG_Branch;
-    wire ID_REG_MemRead;
+    wire [2:0] ID_REG_MemConf;
     wire ID_REG_MemtoReg;
-    wire ID_REG_ALUOp;
+    wire [1:0] ID_REG_ALUOp;
     wire ID_REG_MemWrite;
     wire ID_REG_ALUSrc;
     wire ID_REG_RegWrite;
+    wire ID_REG_ALU_Rs1_Zero;
     wire [3:0] ID_REG_Instruction_30_14_12;
     wire [4:0] ID_REG_Instruction_11_7;
+    wire [4:0] ID_REG_Instruction_19_15;
+    wire [4:0] ID_REG_Instruction_24_20;
 
     wire REG_EX_REG_Branch;
-    wire REG_EX_REG_MemRead;
+    wire [2:0] REG_EX_REG_MemConf;
     wire REG_EX_REG_MemtoReg;
     wire REG_EX_REG_MemWrite;
     wire REG_EX_REG_RegWrite;
-    wire REG_EX_ALUOp;
+    wire [1:0] REG_EX_ALUOp;
     wire REG_EX_ALUSrc;
     wire [31:0] REG_EX_PC_Address;
     wire [31:0] REG_EX_Read_Data_1;
@@ -64,6 +67,8 @@ module CPU_Core(
     wire [31:0] REG_EX_Immediate_Number;
     wire [3:0] REG_EX_Instruction_30_14_12;
     wire [4:0] REG_EX_REG_Instruction_11_7;
+    wire [4:0] REG_EX_Instruction_19_15;
+    wire [4:0] REG_EX_Instruction_24_20;
 
     wire [31:0] EX_REG_Instruction_Address;
     wire EX_REG_Zero;
@@ -72,7 +77,7 @@ module CPU_Core(
     wire REG_MEM_REG_MemtoReg;
     wire REG_MEM_REG_RegWrite;
     wire REG_MEM_Branch;
-    wire REG_MEM_MemRead;
+    wire [2:0] REG_MEM_MemConf;
     wire REG_MEM_MemWrite;
     wire REG_MEM_Zero;
     wire [31:0] REG_MEM_ALU_result;
@@ -115,45 +120,55 @@ module CPU_Core(
         .Read_Data_2(ID_REG_Read_Data_2),
         .Immediate_Number(ID_REG_Immediate_Number),
         .Branch(ID_REG_Branch),
-        .MemRead(ID_REG_MemRead),
+        .MemConf(ID_REG_MemConf),
         .MemtoReg(ID_REG_MemtoReg),
         .ALUOp(ID_REG_ALUOp),
         .MemWrite(ID_REG_MemWrite),
         .ALUSrc(ID_REG_ALUSrc),
         .RegWrite_Out(ID_REG_RegWrite),
+        .ALU_Rs1_Zero(ID_REG_ALU_Rs1_Zero),
         .Instruction_30_14_12(ID_REG_Instruction_30_14_12),
-        .Instruction_11_7(ID_REG_Instruction_11_7)
+        .Instruction_11_7(ID_REG_Instruction_11_7),
+        .Instruction_19_15(ID_REG_Instruction_19_15),
+        .Instruction_24_20(ID_REG_Instruction_24_20)
     );
 
     ID_EX_Register ID_EX_Register_inst(
         .clk(clk),
         .rst(rst),
         .Branch_In(ID_REG_Branch),
-        .MemRead_In(ID_REG_MemRead),
+        .MemConf_In(ID_REG_MemConf),
         .MemtoReg_In(ID_REG_MemtoReg),
         .ALUOp_In(ID_REG_ALUOp),
         .MemWrite_In(ID_REG_MemWrite),
         .ALUSrc_In(ID_REG_ALUSrc),
         .RegWrite_In(ID_REG_RegWrite),
+        .ALU_Rs1_Zero_In(ID_REG_ALU_Rs1_Zero),
         .PC_Address_In(REG_ID_REG_PC_Address),
         .Read_Data_1_In(ID_REG_Read_Data_1),
         .Read_Data_2_In(ID_REG_Read_Data_2),
         .Immediate_Number_In(ID_REG_Immediate_Number),
         .Instruction_30_14_12_In(ID_REG_Instruction_30_14_12),
         .Instruction_11_7_In(ID_REG_Instruction_11_7),
+        .Instruction_19_15_In(ID_REG_Instruction_19_15),
+        .Instruction_24_20_In(ID_REG_Instruction_24_20),
+
         .Branch_Out(REG_EX_REG_Branch),
-        .MemRead_Out(REG_EX_REG_MemRead),
+        .MemConf_Out(REG_EX_REG_MemConf),
         .MemtoReg_Out(REG_EX_REG_MemtoReg),
         .ALUOp_Out(REG_EX_ALUOp),
         .MemWrite_Out(REG_EX_REG_MemWrite),
         .ALUSrc_Out(REG_EX_ALUSrc),
         .RegWrite_Out(REG_EX_REG_RegWrite),
+        .ALU_Rs1_Zero_Out(REG_EX_Rs1_Zero),
         .PC_Address_Out(REG_EX_PC_Address),
         .Read_Data_1_Out(REG_EX_Read_Data_1),
         .Read_Data_2_Out(REG_EX_Read_Data_2),
         .Immediate_Number_Out(REG_EX_Immediate_Number),
         .Instruction_30_14_12_Out(REG_EX_Instruction_30_14_12),
-        .Instruction_11_7_Out(REG_EX_REG_Instruction_11_7)
+        .Instruction_11_7_Out(REG_EX_REG_Instruction_11_7),
+        .Instruction_19_15_Out(REG_EX_Instruction_19_15),
+        .Instruction_24_20_Out(REG_EX_Instruction_24_20)
     );
 
     Execute Execute_inst(
@@ -164,16 +179,25 @@ module CPU_Core(
         .Instruction_30_14_12(REG_EX_Instruction_30_14_12),
         .ALUOp(REG_EX_ALUOp),
         .ALUSrc(REG_EX_ALUSrc),
+        .ALU_Rs1_Zero(REG_EX_Rs1_Zero),
         .Instruction_Address(EX_REG_Instruction_Address),
         .Zero(EX_REG_Zero),
-        .ALU_result(EX_REG_ALU_result)
+        .ALU_result(EX_REG_ALU_result),
+        .EX_RS1(REG_EX_Instruction_19_15),
+        .EX_RS2(REG_EX_Instruction_24_20),
+        .EX_MEM_RD(REG_MEM_REG_Instruction_11_7),
+        .MEM_WB_RD(REG_ID_Write_Register),
+        .EX_MEM_RegWrite(REG_MEM_REG_RegWrite),
+        .MEM_WB_RegWrite(REG_ID_RegWrite),
+        .MEM_ALU_result(REG_MEM_ALU_result),
+        .WB_Write_Data(WB_ID_Write_Data)
     );
 
     EX_MEM_Register EX_MEM_Register_inst(
         .clk(clk),
         .rst(rst),
         .Branch_In(REG_EX_REG_Branch),
-        .MemRead_In(REG_EX_REG_MemRead),
+        .MemConf_In(REG_EX_REG_MemConf),
         .MemtoReg_In(REG_EX_REG_MemtoReg),
         .MemWrite_In(REG_EX_REG_MemWrite),
         .RegWrite_In(REG_EX_REG_RegWrite),
@@ -183,7 +207,7 @@ module CPU_Core(
         .Read_Data_2_In(REG_EX_REG_Read_Data_2),
         .Instruction_11_7_In(REG_EX_REG_Instruction_11_7),
         .Branch_Out(REG_MEM_Branch),
-        .MemRead_Out(REG_MEM_MemRead),
+        .MemConf_Out(REG_MEM_MemConf),
         .MemtoReg_Out(REG_MEM_REG_MemtoReg),
         .MemWrite_Out(REG_MEM_MemWrite),
         .RegWrite_Out(REG_MEM_REG_RegWrite),
@@ -197,7 +221,7 @@ module CPU_Core(
     Memory Memory_inst(
         .clk(clk),
         .Branch(REG_MEM_Branch),
-        .MemRead(REG_MEM_MemRead),
+        .MemConf(REG_MEM_MemConf),
         .MemWrite(REG_MEM_MemWrite),
         .Zero(REG_MEM_Zero),
         .ALU_result(REG_MEM_ALU_result),

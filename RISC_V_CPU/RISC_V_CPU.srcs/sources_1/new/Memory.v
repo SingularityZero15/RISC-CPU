@@ -38,7 +38,7 @@ module Memory(
     assign PCSrc = Branch & Zero;
     
     Data_Memory Data_Memory_inst(
-        .clk(~clk),
+        .clk(clk),
         .Read_Unsigned(MemConf[2]),
         .Write_Enable(MemWrite),
         .Data_Width(MemConf[1:0]),

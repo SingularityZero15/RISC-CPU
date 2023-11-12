@@ -69,7 +69,7 @@ module Data_Memory(
         endcase
         
         //Set write signal for each memory chip
-        if (Address[31:16] == 16'h0001) begin
+        //if (Address[31:16] == 16'h0001) begin
             case (Data_Width)
                 2'b00: begin
                     case (Address[1:0])
@@ -140,12 +140,12 @@ module Data_Memory(
                     Write_Enable_3 = Write_Enable;
                 end
             endcase
-        end else begin
-            Write_Enable_0 = 0;
-            Write_Enable_1 = 0;
-            Write_Enable_2 = 0;
-            Write_Enable_3 = 0;
-        end
+        // end else begin
+        //     Write_Enable_0 = 0;
+        //     Write_Enable_1 = 0;
+        //     Write_Enable_2 = 0;
+        //     Write_Enable_3 = 0;
+        // end
 
         //Arrange Output Data
         case (Data_Width)

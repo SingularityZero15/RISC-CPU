@@ -34,8 +34,8 @@ module Register_File(
     integer i;
     
     reg [31:0] Registers [31:0];
-    assign Read_Data_1 = Registers[Read_Register_1];
-    assign Read_Data_2 = Registers[Read_Register_2];
+    assign Read_Data_1 = (Write_Register == Read_Register_1) ? Write_Data : Registers[Read_Register_1];
+    assign Read_Data_2 = (Write_Register == Read_Register_2) ? Write_Data : Registers[Read_Register_2];
 
     always @(posedge clk) begin
         if (RegWrite) begin

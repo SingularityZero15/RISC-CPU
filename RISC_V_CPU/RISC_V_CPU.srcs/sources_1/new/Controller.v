@@ -33,7 +33,7 @@ module Controller(
     );
 
     always @(*) begin
-        case (Instruction_14_12_6_0)
+        case (Instruction_14_12_6_0[6:0])
             7'b0110111: begin
                 Branch = 0;
                 MemConf = 0;

@@ -62,8 +62,6 @@ module CPU_Core(
     wire [31:0] REG_EX_PC_Address;
     wire [31:0] REG_EX_Read_Data_1;
     wire [31:0] REG_EX_Read_Data_2;
-    wire [31:0] REG_EX_REG_Read_Data_2;
-    assign REG_EX_REG_Read_Data_2 = REG_EX_Read_Data_2;
     wire [31:0] REG_EX_Immediate_Number;
     wire [3:0] REG_EX_Instruction_30_14_12;
     wire [4:0] REG_EX_REG_Instruction_11_7;
@@ -73,6 +71,7 @@ module CPU_Core(
     wire [31:0] EX_REG_Instruction_Address;
     wire EX_REG_Zero;
     wire [31:0] EX_REG_ALU_result;
+    wire [31:0] EX_REG_Read_Data_2;
 
     wire REG_MEM_REG_MemtoReg;
     wire REG_MEM_REG_RegWrite;
@@ -183,6 +182,7 @@ module CPU_Core(
         .Instruction_Address(EX_REG_Instruction_Address),
         .Zero(EX_REG_Zero),
         .ALU_result(EX_REG_ALU_result),
+        .Read_Data_2_Out(EX_REG_Read_Data_2),
         .EX_RS1(REG_EX_Instruction_19_15),
         .EX_RS2(REG_EX_Instruction_24_20),
         .EX_MEM_RD(REG_MEM_REG_Instruction_11_7),
@@ -204,7 +204,7 @@ module CPU_Core(
         .Instruction_Address_In(EX_REG_Instruction_Address),
         .Zero_In(EX_REG_Zero),
         .ALU_result_In(EX_REG_ALU_result),
-        .Read_Data_2_In(REG_EX_REG_Read_Data_2),
+        .Read_Data_2_In(EX_REG_Read_Data_2),
         .Instruction_11_7_In(REG_EX_REG_Instruction_11_7),
         .Branch_Out(REG_MEM_Branch),
         .MemConf_Out(REG_MEM_MemConf),

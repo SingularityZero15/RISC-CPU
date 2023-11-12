@@ -34,6 +34,7 @@ module Execute(
     output [31:0] Instruction_Address,
     output Zero,
     output [31:0] ALU_result,
+    output [31:0] Read_Data_2_Out,
 
     input [4:0] EX_RS1,
     input [4:0] EX_RS2,
@@ -54,6 +55,8 @@ module Execute(
     reg [31:0] operand2;
     wire [1:0] ForwardA;
     wire [1:0] ForwardB;
+
+    assign Read_Data_2_Out = operand2;
 
     always @(*) begin
         case (ForwardA)
